@@ -195,13 +195,13 @@
                 </div>
                 <div class="col-md-6" data-aos="fade-left">
                     <h3>Cerita Kami</h3>
-                    <p>Kami bertemu di tahun 2020 dan sejak saat itu, kami telah berbagi banyak momen indah bersama. Sekarang kami ingin merayakan cinta kami dengan Anda semua.</p>
+                    <p class="text-justify">Semua berawal dari ketidaksengajaan di tahun 2018 — salah masuk grup jurusan saat awal perkuliahan justru menjadi awal kisah kami. Dari obrolan karena kekeliruan, berlanjut ke percakapan pribadi yang ternyata menumbuhkan rasa nyaman. Setelah saling mengenal dan merasa cocok, kami memulai hubungan penuh komitmen pada 26 Oktober 2018. Waktu pun berjalan, cinta kami tumbuh dan semakin kuat. Hingga akhirnya, pada 16 Maret 2025, kami mantap melangkah ke tahap yang lebih serius dengan mengikat janji dalam sebuah lamaran.</p>
                     <div class="row mt-4">
                         <div class="col-md-6">
                             <div class="couple-card mb-3">
                                 <i class="bi bi-person-heart display-6 mb-3 text-warning"></i>
                                 <h4>Indah</h4>
-                                <p>Putri dari Bpk. Ahmad & Ibu Siti</p>
+                                <p>Putri dari Bapak Inkarnedi & Almh. Ibu Erliwati S.pd</p>
                                 <a href="https://instagram.com/indahprmta____" target="_blank" class="btn btn-sm btn-outline-primary-custom mt-2">
                                     <i class="bi bi-instagram"></i> @indahprmta____
                                 </a>
@@ -211,7 +211,7 @@
                             <div class="couple-card mb-3">
                                 <i class="bi bi-person-heart display-6 mb-3 text-warning"></i>
                                 <h4>Gery</h4>
-                                <p>Putra dari Bpk. Budi & Ibu Rina</p>
+                                <p>Putra dari Bpk. Sabari S.P & Ibu Nailisada</p>
                                 <a href="https://instagram.com/gery.anuggrahh" target="_blank" class="btn btn-sm btn-outline-primary-custom mt-2">
                                     <i class="bi bi-instagram"></i> @gery.anuggrahh
                                 </a>
