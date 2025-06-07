@@ -1,0 +1,6 @@
+RewriteEngine On
+
+# Jika permintaan bukan untuk folder /dashboard/public, arahkan ke sana
+RewriteCond %{REQUEST_URI} !^/dashboard/public/
+RewriteRule ^$ /dashboard/public/ [L]
+RewriteRule ^(.*)$ /dashboard/public/$1 [L]
