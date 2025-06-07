@@ -1,0 +1,60 @@
+:root {
+    --color-gold: #f3d89d;
+    --color-dark: #1a1a1a;
+    --color-gold-transparent: rgba(212, 196, 165, 0.3);
+    --gradient-dark: linear-gradient(135deg, 
+        rgba(26, 26, 26, 0.8) 0%,
+        rgba(26, 26, 26, 0.6) 100%
+    );
+    --font-primary: 'Montserrat', serif;
+    --font-decorative: 'Great Vibes', cursive;
+}
+
+/* Base styles */
+body {
+    background: var(--color-dark);
+    color: var(--color-gold);
+    font-family: var(--font-primary);
+    min-height: 100vh;
+    line-height: 1.6;
+    max-width: 100vw;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Typography */
+h1, h2, h3, .serif {
+    font-family: var(--font-decorative);
+    color: var(--color-gold);
+    letter-spacing: 0.5px;
+}
+
+/* Colors & Utilities */
+.gold { color: var(--color-gold); }
+.bg-gold {
+    background: var(--color-gold) !important;
+    color: var(--color-dark) !important;
+}
+.border-gold { border-color: var(--color-gold) !important; }
+
+/* Common Section Styles */
+section {
+    position: relative;
+    background: var(--gradient-dark);
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 4rem 0;
+    margin: 0;
+}
+
+.blur-backdrop {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.z-layered {
+    position: relative;
+    z-index: 3;
+}
