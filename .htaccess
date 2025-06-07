@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^(www\.)?indahgery\.com$
+RewriteCond %{REQUEST_URI} !^/dashboard/public/
+RewriteRule ^(.*)$ /dashboard/public/$1 [L]
