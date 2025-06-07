@@ -16,8 +16,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <link href="<?= base_url('assets/css/classic.css'); ?>" rel="stylesheet">
 </head>
 <body>
-    <h1>Classic</h1>
+    <section id="cover">
+        
+    </section>
 </body>
 </html>
