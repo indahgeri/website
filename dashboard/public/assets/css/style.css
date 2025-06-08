@@ -65,12 +65,12 @@ section {
     color: #1a1a1a;
     border: none;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     position: fixed;
     bottom: 20px;
     left: 20px;
-    font-size: 24px;
+    /* font-size: 24px; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -86,7 +86,7 @@ section {
 }
 
 .music-btn.playing {
-    animation: pulse 1.5s infinite;
+    animation: pulse-scale 1.5s infinite;
 }
 
 /* ============================================
@@ -97,8 +97,8 @@ section {
     bottom: max(80px, env(safe-area-inset-bottom));
     left: 50%;
     transform: translateX(-50%);
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     background: rgba(212, 196, 165, 0.3);
     border: 1px solid rgba(212, 196, 165, 0.1);
@@ -133,7 +133,7 @@ section {
 .auto-scroll-control.show {
     display: flex;
     opacity: 1;
-    animation: fadeIn 0.3s ease;
+    /* animation: fadeIn 0.3s ease; */
 }
 
 .auto-scroll-control:hover {
@@ -149,8 +149,8 @@ section {
    Floating Button Styles
 ============================================ */
 .floating-button {
-    width: 48px;
-    height: 48px;
+    width: 35px;
+    height: 35px;
     font-size: 1.2rem;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
@@ -160,26 +160,98 @@ section {
     transition: transform 0.1s;
 }
 
-.floating-button:hover {
+/* .floating-button:hover {
     transform: translateY(-3px);
 }
-
-.floating-button:active {
+*/
+/* .floating-button:active {
     transform: scale(0.95);
-}
+} */
 
 .floating-button.show {
-    opacity: 1;
+    opacity: 0.5;
     visibility: visible;
-    animation: fadeIn 0.3s ease;
+    /* animation: fadeIn 0.3s ease; */
 }
 
 /* ============================================
    Back To Top Button
 ============================================ */
 .back-to-top {
-    bottom: max(20px, env(safe-area-inset-bottom));
+    position: fixed;
+    bottom: max(25px, env(safe-area-inset-bottom, 25px));
     right: 15px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: rgba(212, 196, 165, 0.95);
+    border: 2px solid #d4c4a5;
+    color: #1a1a1a;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 1000;
+    opacity: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+    /* Memperbesar area tap tanpa mengubah ukuran visual */
+    padding: 0;
+}
+
+.back-to-top::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    bottom: -10px;
+    left: -10px;
+    z-index: -1;
+}
+
+.back-to-top:hover,
+.back-to-top:active,
+.back-to-top:focus {
+    background: #d4c4a5;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    outline: none;
+}
+
+/* Menambahkan active state untuk perangkat mobile */
+.back-to-top:active {
+    transform: scale(0.95);
+}
+
+.back-to-top.show {
+    display: flex;
+    opacity: 1;
+    animation: fadeIn 0.3s ease;
+    -webkit-animation: fadeIn 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .back-to-top {
+        width: 40px; /* Ukuran yang lebih kecil untuk mobile */
+        height: 40px;
+        font-size: 1rem;
+        bottom: max(20px, env(safe-area-inset-bottom, 20px));
+        right: 12px;
+    }
+}
+
+/* Khusus untuk iOS dengan notch */
+@supports (padding: max(0px)) {
+    .back-to-top {
+        padding-bottom: max(0px, env(safe-area-inset-bottom));
+        bottom: max(25px, env(safe-area-inset-bottom));
+    }
 }
 
 /* ============================================
@@ -214,8 +286,8 @@ section {
     .auto-scroll-control,
     .floating-button,
     .back-to-top {
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
         font-size: 1rem;
         bottom: max(20px, env(safe-area-inset-bottom));
     }
