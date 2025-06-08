@@ -28,6 +28,15 @@
     z-index: 3;
 }
 
+#cover .title-corner p {
+    font-size: 0.6rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+    font-weight: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
 #cover .title-corner h1 {
     font-size: 1rem;
     margin-bottom: 0.5rem;
