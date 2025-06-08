@@ -20,11 +20,12 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="<?= base_url('assets/css/style.css'); ?>" rel="stylesheet">
-    <link href="<?= base_url('assets/css/classic.css'); ?>" rel="stylesheet">
-    <link href="<?= base_url('assets/css/savethedate.css'); ?>" rel="stylesheet">
-    <link href="<?= base_url('assets/css/components/countdown.css'); ?>" rel="stylesheet">
-    <link href="<?= base_url('assets/css/animations.css'); ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/css/style.css?v='.filemtime(FCPATH.'assets/css/style.css')); ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/css/classic.css?v='.filemtime(FCPATH.'assets/css/classic.css')); ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/css/savethedate.css?v='.filemtime(FCPATH.'assets/css/savethedate.css')); ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/css/components/countdown.css?v='.filemtime(FCPATH.'assets/css/components/countdown.css')); ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/css/animations.css?v='.filemtime(FCPATH.'assets/css/animations.css')); ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/css/profile.css?v='.filemtime(FCPATH.'assets/css/profile.css')); ?>" rel="stylesheet">
 </head>
 <body>
     <!-- Cover Section -->
@@ -76,6 +77,48 @@
                 <div class="countdown-box">
                     <div class="countdown-number" id="seconds">00</div>
                     <div class="countdown-label">Detik</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 1: Profil Mempelai Wanita -->
+    <section id="profil-wanita" class="profile-section">
+        <div class="profile-bg-slideshow" id="slideshow-wanita">
+            <div class="profile-bg-slide active" style="background-image: url('/assets/images/bajuadat-indah.jpg')"></div>
+        </div>
+        <div class="profile-overlay"></div>
+        <div class="profile-content" data-aos="zoom-in-down" data-aos-delay="100" data-aos-duration="2000">
+            <div class="profile-card">
+                <div class="minang-border" style="pointer-events: none;"></div>
+                <svg class="minang-ornament-svg top-left" viewBox="0 0 100 100">
+                    <use href="#minang-corner"/>
+                </svg>
+                <svg class="minang-ornament-svg top-right" viewBox="0 0 100 100">
+                    <use href="#minang-corner"/>
+                </svg>
+                <svg class="minang-ornament-svg bottom-left" viewBox="0 0 100 100">
+                    <use href="#minang-corner"/>
+                </svg>
+                <svg class="minang-ornament-svg bottom-right" viewBox="0 0 100 100">
+                    <use href="#minang-corner"/>
+                </svg>
+                <div class="profile-image-wrapper">
+                    <div class="profile-image">
+                        <img src="/assets/images/bajuadat-indah.jpg" alt="Indah">
+                    </div>
+                </div>
+                <div class="profile-text">
+                    <h3 class="serif">Indah Permata Sari S.Ikom</h3>
+                    <p class="gold-light">Putri dari</p>
+                    <p class="parents-name">
+                        Bapak Inkarnedi & Almh. Ibu Erliwati S.pd
+                    </p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/indahprmta____" target="_blank">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

@@ -18,6 +18,12 @@ foreach ($modules as $module) {
     }
 }
 
+// 1) Route khusus untuk /invite/klasik/<tamu>
+// $routes->get('invite/klasik/(:segment)', 'Invite::klasik/$1');
+
+// 2) Jika hanya /invite/klasik tanpa nama tamu
+// $routes->get('invite/klasik', 'Invite::klasik');
+
 // Format /invite/elang-surya
 $routes->get('invite/(:segment)', 'Invite::index/$1');
 

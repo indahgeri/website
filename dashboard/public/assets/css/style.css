@@ -357,3 +357,92 @@ section {
 .modal-body {
     -webkit-overflow-scrolling: touch;
 }
+
+
+/* ============================================
+   Minang Ornament Styles
+============================================ */
+.minang-border {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    opacity: 0.1;
+    pointer-events: none;
+    background-image: 
+        linear-gradient(45deg, transparent 48%, var(--color-gold) 49%, var(--color-gold) 51%, transparent 52%),
+        linear-gradient(-45deg, transparent 48%, var(--color-gold) 49%, var(--color-gold) 51%, transparent 52%);
+    background-size: 30px 30px;
+    background-position: center;
+    mask-image: linear-gradient(to bottom, 
+            rgba(0,0,0,1) 0%,
+            rgba(0,0,0,0) 20%,
+            rgba(0,0,0,0) 80%,
+            rgba(0,0,0,1) 100%
+        );
+    -webkit-mask-image: linear-gradient(to bottom, 
+            rgba(0,0,0,1) 0%,
+            rgba(0,0,0,0) 20%,
+            rgba(0,0,0,0) 80%,
+            rgba(0,0,0,1) 100%
+        );
+}
+
+.minang-ornament-svg {
+    z-index: 2;
+    pointer-events: none;
+}
+
+.minang-divider {
+    position: relative;
+    height: 40px;
+    margin: 2rem 0;
+    opacity: 0.2;
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0C8.954 0 0 8.954 0 20s8.954 20 20 20 20-8.954 20-20S31.046 0 20 0zm0 36c-8.837 0-16-7.163-16-16S11.163 4 20 4s16 7.163 16 16-7.163 16-16 16z' fill='%23d4c4a5'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-position: center;
+    background-size: contain;
+}
+
+.minang-ornament {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.15;
+    fill: #d4c4a5;
+}
+
+.minang-corner-top {
+    top: 0;
+    right: 0;
+    transform: rotate(0deg);
+}
+
+.minang-corner-bottom {
+    bottom: 0;
+    left: 0;
+    transform: rotate(180deg);
+}
+
+/* SVG Minang Ornament Template */
+.minang-ornament-svg {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    fill: #d4c4a5;
+    opacity: 0.1;
+}
+
+/* Minang Ornament Responsive */
+@media (max-width: 576px) {
+    .minang-ornament {
+        width: 120px;
+        height: 120px;
+    }
+
+    .minang-ornament-svg {
+        width: 60px;
+        height: 60px;
+    }
+}
