@@ -23,6 +23,8 @@
     <link href="<?= base_url('assets/css/style.css'); ?>" rel="stylesheet">
     <link href="<?= base_url('assets/css/classic.css'); ?>" rel="stylesheet">
     <link href="<?= base_url('assets/css/savethedate.css'); ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/css/components/countdown.css'); ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/css/animations.css'); ?>" rel="stylesheet">
 </head>
 <body>
     <section id="cover">
@@ -108,5 +110,6 @@
         AOS.init();
     </script>
     <script src="<?= base_url('assets/js/apps.js'); ?>"></script>
+    <script src="<?= base_url('assets/js/countdown.js'); ?>"></script>
 </body>
 </html>

@@ -32,17 +32,53 @@
     filter: brightness(0.7) contrast(1.1);
 }
 
+#save-the-date .save-the-date-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+
+#save-the-date .container {
+    position: relative;
+    z-index: 2;
+}
+
+.save-date-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.save-date-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.save-date-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.save-date-text {
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #d4c4a5, #c4b495);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    text-shadow: 0 0 10px rgba(212, 196, 165, 0.4);
+}
+
+
 /* Zoom Animation for Background */
 .animate-zoom {
     animation: zoomInBackground 10s ease-out forwards;
     transform-origin: center center;
-}
-
-@keyframes zoomInBackground {
-    0% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(1.1);
-    }
 }
