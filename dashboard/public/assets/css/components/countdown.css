@@ -1,20 +1,26 @@
+/* ========================================
+   Countdown Container
+======================================== */
 .countdown-container {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1rem;
     margin: 2rem auto;
+    padding: 2rem;
+    max-width: fit-content;
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    padding: 2rem;
     border-radius: 20px;
-    max-width: fit-content;
     border: 1px solid rgba(212, 196, 165, 0.15);
     box-shadow: 0 8px 32px rgba(41, 25, 22, 0.3);
     transition: all 0.3s ease;
 }
 
+/* ========================================
+   Countdown Box
+======================================== */
 .countdown-box {
     position: relative;
     padding: 0.5rem 2rem;
@@ -45,6 +51,9 @@
     text-shadow: 0 0 10px rgba(212, 196, 165, 0.4);
 }
 
+/* ========================================
+   Countdown Number & Label
+======================================== */
 .countdown-number {
     font-size: 2.8rem;
     font-weight: 600;
@@ -55,7 +64,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 0 0 10px rgba(212, 196, 165, 0.4);
-    animation:  pulseGlow 1.5s infinite;
+    animation: pulseGlow 1s infinite;
 }
 
 .countdown-label {
@@ -66,19 +75,22 @@
     font-weight: 300;
 }
 
+/* ========================================
+   Responsive
+======================================== */
 @media (max-width: 768px) {
     .countdown-container {
         padding: 1.5rem;
-        gap: 0.8rem;
+        gap: 1rem;
     }
 
     .countdown-box {
-        padding: 0.5rem 1.5rem;
-        min-width: 100px;
+        padding: 0.8rem;
+        min-width: 70px;
     }
 
     .countdown-number {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
     }
 
     .countdown-box:not(:last-child)::after {
@@ -90,6 +102,10 @@
         font-size: 0.75rem;
         letter-spacing: 1px;
     }
+
+    .couple-name {
+        font-size: 3.5rem;
+    }
 }
 
 @media (max-width: 576px) {
@@ -99,12 +115,12 @@
     }
 
     .countdown-box {
-        padding: 0.4rem 1rem;
-        min-width: 80px;
+        padding: 0.4rem 0.8rem;
+        min-width: 65px;
     }
 
     .countdown-number {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .countdown-box:not(:last-child)::after {
@@ -114,5 +130,24 @@
 
     .countdown-label {
         font-size: 0.7rem;
+        letter-spacing: 1px;
+    }
+
+    .save-date-text {
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+    }
+
+    .small-title {
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+    }
+
+    .wedding-date {
+        font-size: 1rem;
+    }
+
+    .couple-name {
+        font-size: 2.8rem;
     }
 }

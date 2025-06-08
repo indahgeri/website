@@ -88,3 +88,200 @@ section {
 .music-btn.playing {
     animation: pulse 1.5s infinite;
 }
+
+/* ============================================
+   Auto Scroll Control Button
+============================================ */
+.auto-scroll-control {
+    position: fixed;
+    bottom: max(80px, env(safe-area-inset-bottom));
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(212, 196, 165, 0.3);
+    border: 1px solid rgba(212, 196, 165, 0.1);
+    color: #1a1a1a;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 1001;
+    opacity: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+    padding: 0;
+}
+
+.auto-scroll-control::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    bottom: -10px;
+    left: -10px;
+    z-index: -1;
+}
+
+.auto-scroll-control.show {
+    display: flex;
+    opacity: 1;
+    animation: fadeIn 0.3s ease;
+}
+
+.auto-scroll-control:hover {
+    transform: translateX(-50%) translateY(-3px);
+    background: rgba(212, 196, 165, 0.8);
+}
+
+.auto-scroll-control:active {
+    transform: translateX(-50%) scale(0.95);
+}
+
+/* ============================================
+   Floating Button Styles
+============================================ */
+.floating-button {
+    width: 48px;
+    height: 48px;
+    font-size: 1.2rem;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+    transition: transform 0.1s;
+}
+
+.floating-button:hover {
+    transform: translateY(-3px);
+}
+
+.floating-button:active {
+    transform: scale(0.95);
+}
+
+.floating-button.show {
+    opacity: 1;
+    visibility: visible;
+    animation: fadeIn 0.3s ease;
+}
+
+/* ============================================
+   Back To Top Button
+============================================ */
+.back-to-top {
+    bottom: max(20px, env(safe-area-inset-bottom));
+    right: 15px;
+}
+
+/* ============================================
+   Keyframes
+============================================ */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+    }
+}
+
+/* ============================================
+   Mobile Optimization
+============================================ */
+@media (max-width: 768px) {
+    .auto-scroll-control,
+    .floating-button,
+    .back-to-top {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        bottom: max(20px, env(safe-area-inset-bottom));
+    }
+
+    .floating-button::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        bottom: -10px;
+        left: -10px;
+        z-index: -1;
+    }
+
+    .btn,
+    .form-control,
+    select,
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        min-height: 44px;
+        line-height: 44px;
+        padding: 0 12px;
+    }
+
+    .gallery-item {
+        margin-bottom: 15px;
+    }
+
+    .gallery-item img {
+        border-radius: 8px;
+    }
+}
+
+/* ============================================
+   iOS Safe Area Support
+============================================ */
+@supports (padding: max(0px)) {
+    .floating-button,
+    .auto-scroll-control {
+        padding-bottom: max(0px, env(safe-area-inset-bottom));
+        bottom: max(20px, env(safe-area-inset-bottom));
+    }
+
+    body {
+        padding-top: max(0px, env(safe-area-inset-top));
+        padding-bottom: max(0px, env(safe-area-inset-bottom));
+        padding-left: max(0px, env(safe-area-inset-left));
+        padding-right: max(0px, env(safe-area-inset-right));
+    }
+}
+
+/* ============================================
+   Prevent Zoom on iOS
+============================================ */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    select,
+    textarea,
+    input {
+        font-size: 16px !important;
+    }
+}
+
+/* ============================================
+   Safari Momentum Scroll Fix
+============================================ */
+.modal-body {
+    -webkit-overflow-scrolling: touch;
+}

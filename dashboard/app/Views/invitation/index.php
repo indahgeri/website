@@ -27,6 +27,7 @@
     <link href="<?= base_url('assets/css/animations.css'); ?>" rel="stylesheet">
 </head>
 <body>
+    <!-- Cover Section -->
     <section id="cover">
         <div class="bg-coverfoto"></div>
 
