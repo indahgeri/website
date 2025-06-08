@@ -54,7 +54,7 @@
         <div class="position-absolute start-0 top-0 p-4" style="z-index: 2;">
             <p class="text-uppercase mb-1" style="font-size: 0.8rem; letter-spacing: 2px; opacity: 0.9;" data-aos="fade-down" data-aos-duration="1000">The Wedding Of</p>
             <h2 class="display-4 serif gold mb-2" data-aos="fade-up" data-aos-duration="2000">Indah &<br> Geri</h2>
-            <p class="mb-4" data-aos="fade-up" data-aos-duration="2000">Minggu, 26 Juni 2025</p>
+            <p class="mb-4" data-aos="fade-up" data-aos-duration="2000">Kamis, 26 Juni 2025</p>
         </div>
 
         <!-- Countdown Timer -->
