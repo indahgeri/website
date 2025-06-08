@@ -26,6 +26,7 @@
     <link href="<?= base_url('assets/css/components/countdown.css?v='.filemtime(FCPATH.'assets/css/components/countdown.css')); ?>" rel="stylesheet">
     <link href="<?= base_url('assets/css/animations.css?v='.filemtime(FCPATH.'assets/css/animations.css')); ?>" rel="stylesheet">
     <link href="<?= base_url('assets/css/profile.css?v='.filemtime(FCPATH.'assets/css/profile.css')); ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/css/story.css?v='.filemtime(FCPATH.'assets/css/story.css')); ?>" rel="stylesheet">
 </head>
 <body>
     <!-- Cover Section -->
@@ -161,6 +162,135 @@
                             <i class="bi bi-instagram"></i>
                         </a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Background yg akan tampil di semua section -->
+    <div class="section-bg"></div>
+    <!-- Section 3: Our Story -->
+    <section id="story" class="container py-5 position-relative">
+        <!-- Ornamen Klasik -->
+        <div class="classic-ornament top-left"></div>
+        <div class="classic-ornament top-right"></div>
+        <div class="classic-ornament bottom-left"></div>
+        <div class="classic-ornament bottom-right"></div>
+        
+        <div class="story-container">
+            <h2 class="story-title serif text-center" data-aos="fade-down" data-aos-duration="1000">
+                <span class="title-decoration">❦</span>
+                Our Story
+                <span class="title-decoration">❦</span>
+            </h2>
+            
+            <div class="timeline-classic">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item-classic">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content-wrapper" data-aos="fade-right" data-aos-duration="1500">
+                        <div class="timeline-date">
+                            <span class="date-text">Januari 2018</span>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="content-inner">
+                                <div class="timeline-image">
+                                    <img src="<?= base_url('assets/images/kasual-01.jpg'); ?>" alt="First Meet" class="story-img">
+                                    <div class="image-frame"></div>
+                                </div>
+                                <div class="timeline-text">
+                                    <h3 class="gold serif">Awal Pertemuan</h3>
+                                    <p>Di tengah kesibukan perkuliahan, takdir mempertemukan kami melalui sebuah kesalahan kecil. Sebuah grup jurusan yang tertukar membawa kami pada obrolan pertama yang penuh makna. Tuhan memang memiliki cara yang indah untuk mempertemukan dua hati.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item-classic">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content-wrapper" data-aos="fade-left" data-aos-duration="1500">
+                        <div class="timeline-date">
+                            <span class="date-text">26 Oktober 2018</span>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="content-inner">
+                                <div class="timeline-image">
+                                    <img src="<?= base_url('assets/images/kasual-07.jpg'); ?>" alt="Dating" class="story-img">
+                                    <div class="image-frame"></div>
+                                </div>
+                                <div class="timeline-text">
+                                    <h3 class="gold serif">Menjalin Kasih</h3>
+                                    <p>Setelah beberapa bulan saling mengenal, kami memutuskan untuk mengikat hati dalam sebuah komitmen. Hari itu menjadi awal dari perjalanan cinta kami yang penuh dengan pembelajaran dan ketulusan.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item-classic">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content-wrapper" data-aos="fade-right" data-aos-duration="1500">
+                        <div class="timeline-date">
+                            <span class="date-text">16 Maret 2025</span>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="content-inner">
+                                <div class="timeline-image">
+                                    <img src="<?= base_url('assets/images/kasual-02.jpg'); ?>" alt="Engagement" class="story-img">
+                                    <div class="image-frame"></div>
+                                </div>
+                                <div class="timeline-text">
+                                    <h3 class="gold serif">Pertunangan</h3>
+                                    <p>Setelah menjalani hubungan selama kurang lebih 7 tahun, kami memantapkan hati untuk melangkah ke jenjang yang lebih serius. Dengan restu kedua keluarga, kami mengikat janji dalam sebuah pertunangan yang penuh makna.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 4 -->
+                <div class="timeline-item-classic">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content-wrapper" data-aos="fade-left" data-aos-duration="1500">
+                        <div class="timeline-date">
+                            <span class="date-text">26 Juni 2025</span>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="content-inner">
+                                <div class="special-timeline-image">
+                                    <img src="<?= base_url('assets/images/bajuadat-indahgery-00.jpg'); ?>" alt="Wedding" class="full-height-image">
+                                    <div class="image-frame"></div>
+                                </div>
+                                <div class="timeline-text">
+                                    <h3 class="gold serif">Menuju Pernikahan</h3>
+                                    <p>Dan kini, dengan penuh rasa syukur dan bahagia, kami siap melangkah ke jenjang pernikahan. Semoga Allah SWT senantiasa memberkahi dan meridhoi perjalanan kami dalam membangun mahligai rumah tangga yang sakinah, mawaddah, warahmah.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tambahan Quote dengan Desain Klasik -->
+            <div class="quote-wrapper text-center" data-aos="fade-up" data-aos-duration="1500">
+                <div class="quote-classic">
+                    <div class="quote-ornament top"></div>
+                    <p class="quote-text">
+                        "Dan di antara tanda-tanda kebesaran-Nya ialah
+                        Dia menciptakan pasangan-pasangan untukmu
+                        dari jenismu sendiri,
+                        agar kamu cenderung dan merasa tenteram kepadanya,
+                        dan Dia menjadikan di antaramu
+                        rasa kasih dan sayang."
+                    </p>
+                    <p class="quote-source">
+                        (QS. Ar-Rum: 21)
+                    </p>
+                    <div class="quote-ornament bottom"></div>
                 </div>
             </div>
         </div>

@@ -446,3 +446,23 @@ section {
         height: 60px;
     }
 }
+
+/* Section Background Adjustments */
+.section-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: url('/assets/images/bg/cover.jpg') center/cover no-repeat;
+    opacity: 0.8;
+    pointer-events: none; /* agar tidak mengganggu klik elemen lain */
+    /* filter: brightness(0.8) contrast(1.1); */
+}
+/* Untuk iPhone atau layar kecil, hapus fixed */
+@media screen and (max-width: 767px) {
+    .section-bg {
+        background-attachment: scroll; /* atau hapus "fixed" */
+    }
+}
