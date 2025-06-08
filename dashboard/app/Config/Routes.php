@@ -17,3 +17,9 @@ foreach ($modules as $module) {
         require $routes_file;
     }
 }
+
+// Format /invite/elang-surya
+$routes->get('invite/(:segment)', 'Invite::index/$1');
+
+// Catch-all fallback (taruh paling akhir)
+$routes->get('(:segment)', 'Invite::index/$1');
