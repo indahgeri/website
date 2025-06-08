@@ -124,6 +124,49 @@
         </div>
     </section>
 
+    <!-- Section 2: Profil Mempelai Pria -->
+    <section id="profil-pria" class="profile-section">
+        <div class="profile-bg-slideshow" id="slideshow-pria">
+            <div class="profile-bg-slide active" style="background-image: url(<?= base_url('assets/images/bajuadat-gery.jpg') ?>)"></div>
+        </div>
+        <div class="profile-overlay"></div>
+        <div class="profile-content" data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="2000">
+            <div class="profile-card">
+                <div class="minang-border" style="pointer-events: none;"></div>
+                <svg class="minang-ornament-svg top-left" viewBox="0 0 100 100">
+                    <use href="#minang-corner"/>
+                </svg>
+                <svg class="minang-ornament-svg top-right" viewBox="0 0 100 100">
+                    <use href="#minang-corner"/>
+                </svg>
+                <svg class="minang-ornament-svg bottom-left" viewBox="0 0 100 100">
+                    <use href="#minang-corner"/>
+                </svg>
+                <svg class="minang-ornament-svg bottom-right" viewBox="0 0 100 100">
+                    <use href="#minang-corner"/>
+                </svg>
+                <div class="profile-image-wrapper">
+                    <div class="profile-image">
+                        <img src="<?= base_url('assets/images/bajuadat-gery.jpg') ?>" alt="Geri">
+                    </div>
+                </div>
+                <div class="profile-text">
+                    <h3 class="serif">Gery Anuggrah S.SOS</h3>
+                    <p class="gold-light">Putra dari</p>
+                    <p class="parents-name">
+                        Bapak Sabari S.P & Ibu Nailisada
+                    </p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/gery.anuggrahh" target="_blank">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <!-- Auto Scroll Control Button -->
     <button id="autoScrollControl" class="floating-button auto-scroll-control" aria-label="Kontrol Auto Scroll">
         <i class="bi bi-pause-circle"></i>
