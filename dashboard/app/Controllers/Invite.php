@@ -30,7 +30,8 @@ class Invite extends BaseController
             }
         } catch (\Exception $e) {
             log_message('error', $e->getMessage());
-            return redirect()->back()->with('error', 'Terjadi kesalahan dalam memproses permintaan');
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+            // return redirect()->back()->with('error', 'Terjadi kesalahan dalam memproses permintaan');
         }
 
         $images = $this->getGalleryImages();
