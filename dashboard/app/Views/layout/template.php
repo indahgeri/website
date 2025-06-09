@@ -20,9 +20,9 @@
 <div class="wrapper">
 
   <!-- Preloader -->
-  <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="<?= base_url('favicon.ico'); ?>" alt="Logo" height="60" width="60">
-  </div>
+<div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__shake rounded-circle shadow" src="<?= base_url('logo.png'); ?>" alt="Logo" height="460" width="460" style="object-fit:cover;">
+</div>
 
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -60,7 +60,7 @@
     <div class="sidebar">
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User">
+          <img src="<?= base_url('assets/images/bajuadat-indahgery-03.jpg') ?>" class="rounded elevation-2" alt="User">
         </div>
         <div class="info">
           <a href="#" class="d-block"><?= session('username') ?? 'Indah & Gery' ?></a>
@@ -102,9 +102,9 @@
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
+          <!-- <div class="col-sm-6">
             <h1><?= esc($title) ?></h1>
-          </div>
+          </div> -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <?= $this->renderSection('breadcrumb') ?>
