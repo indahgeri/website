@@ -58,7 +58,7 @@
         <div class="container">
             <h2 class="text-center section-title" data-aos="fade-up">Deadline Pekerjaan</h2>
             <div class="text-center mb-4">
-            <p class="lead text-muted">Proyek ini harus selesai pada:</p>
+            <p class="lead text-muted">Countdown:</p>
             <!-- Tanggal hard-code, nanti akan di-update lewat JS -->
             <h4 class="text-gold">10 Juni 2025, 17:00 WIB</h4>
             </div>
