@@ -9,4 +9,10 @@ class Home extends BaseController
         helper('html');
         return view('home');
     }
+
+    public function countdown(): string
+    {
+        helper('html');
+        return view('countdown');
+    }
 }

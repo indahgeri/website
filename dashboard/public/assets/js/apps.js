@@ -266,3 +266,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 3000);
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    var imageModalEl = document.getElementById('imageModal');
+    // Ketika modal akan dibuka…
+    imageModalEl.addEventListener('show.bs.modal', function (event) {
+      // Elemen yang memicu (gallery-item)
+      var trigger = event.relatedTarget;
+      // Ambil URL dari attribute data-img
+      var imgSrc = trigger.getAttribute('data-img');
+      // Masukkan ke tag <img> di dalam modal
+      var modalImg = imageModalEl.querySelector('.modal-image-container img');
+      modalImg.src = imgSrc;
+    });
+});

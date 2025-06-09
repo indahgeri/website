@@ -6,6 +6,7 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Home::index');
+$routes->get('countdown', 'Home::countdown');
 
 $modules_path = ROOTPATH . 'modules/';
 $modules = scandir($modules_path);

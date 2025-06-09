@@ -27,6 +27,7 @@
     <link href="<?= base_url('assets/css/animations.css?v='.filemtime(FCPATH.'assets/css/animations.css')); ?>" rel="stylesheet">
     <link href="<?= base_url('assets/css/profile.css?v='.filemtime(FCPATH.'assets/css/profile.css')); ?>" rel="stylesheet">
     <link href="<?= base_url('assets/css/story.css?v='.filemtime(FCPATH.'assets/css/story.css')); ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/css/gallery.css?v='.filemtime(FCPATH.'assets/css/gallery.css')); ?>" rel="stylesheet">
 </head>
 <body>
     <!-- Cover Section -->
@@ -296,6 +297,60 @@
         </div>
     </section>
 
+    <!-- Section 4: Galeri -->
+    <section id="galeri" class="container py-5">
+        <h2 class="section-title serif" data-aos="fade-down" data-aos-duration="1000">Gallery</h2>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid">
+            <!-- Gallery Item 1 -->
+            <div class="gallery-item" data-aos="fade" data-aos-duration="1500" data-aos-delay="100" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="<?= base_url('assets/images/bajuadat-indahgery-00.jpg') ?>">
+                <img src="<?= base_url('assets/images/bajuadat-indahgery-00.jpg') ?>" alt="Gallery 0">
+            </div>
+            <!-- Gallery Item 2 -->
+            <div class="gallery-item" data-aos="fade" data-aos-duration="1500" data-aos-delay="100" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="<?= base_url('assets/images/bajuadat-indahgery-01.jpg') ?>">
+                <img src="<?= base_url('assets/images/bajuadat-indahgery-01.jpg') ?>" alt="Gallery 0">
+            </div>
+            <!-- Gallery Item 3 -->
+            <div class="gallery-item" data-aos="fade" data-aos-duration="1500" data-aos-delay="600" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="<?= base_url('assets/images/bajuadat-indahgery-02.jpg') ?>">
+                <img src="<?= base_url('assets/images/bajuadat-indahgery-02.jpg') ?>" alt="Gallery 6">
+            </div>
+            <?php foreach($images as $i => $img): 
+                // delay AOS berjenjang
+                $delay = 100 + ($i * 100);
+                $url   = base_url("assets/images/{$img}");
+                ?>
+                <div
+                    class="gallery-item"
+                    data-aos="fade"
+                    data-aos-duration="1500"
+                    data-aos-delay="<?= $delay ?>"
+                    data-bs-toggle="modal"
+                    data-bs-target="#imageModal"
+                    data-img="<?= $url ?>"
+                >
+                    <img src="<?= $url ?>" alt="Gallery <?= $i+1 ?>" class="img-fluid">
+                </div>
+            <?php endforeach; ?>
+        </div>
+
+        <!-- Modal for Image Preview -->
+        <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body p-0">
+                        <button type="button" class="modal-close-btn" data-bs-dismiss="modal">
+                            <i class="bi bi-x"></i>
+                        </button>
+                        <div class="modal-image-container">
+                            <img src="" class="img-fluid" alt="Gallery Preview">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- Auto Scroll Control Button -->
     <button id="autoScrollControl" class="floating-button auto-scroll-control" aria-label="Kontrol Auto Scroll">
@@ -326,7 +381,7 @@
     <script>
         AOS.init();
     </script>
-    <script src="<?= base_url('assets/js/apps.js'); ?>"></script>
+    <script src="<?= base_url('assets/js/apps.js?v='.filemtime(FCPATH.'assets/js/apps.js')); ?>"></script>
     <script src="<?= base_url('assets/js/countdown.js'); ?>"></script>
 </body>
 </html>
