@@ -311,7 +311,7 @@
             <?php foreach($images as $i => $img): 
                 // delay AOS berjenjang
                 $delay = 100 + ($i * 100);
-                $url   = base_url("assets/images/{$img}");
+                $url   = base_url("assets/images/{$img}").'?v='.filemtime(FCPATH."assets/images/{$img}");
                 ?>
                 <div
                     class="gallery-item"
