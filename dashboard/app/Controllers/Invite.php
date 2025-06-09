@@ -20,7 +20,7 @@ class Invite extends BaseController
         ]);
 
         if (!$validation->run(['slug' => $slug])) {
-            return redirect()->to('/');
+            return redirect()->to(site_url('/'));
         }
 
         try {
