@@ -67,25 +67,34 @@
         </div>
       </div>
 
-      <nav class="mt-2">
-        <?php $uri = service('uri'); ?>
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview">
-            <li class="nav-item">
-                <a href="<?= base_url('invited-guests') ?>" 
-                class="nav-link <?= $uri->getSegment(1) == 'invited-guests' && $uri->getSegment(2) == '' ? 'active' : '' ?>">
-                <i class="nav-icon fas fa-users"></i>
-                <p>Daftar Tamu</p>
-                </a>
+    <nav class="mt-2">
+      <?php $uri = service('uri'); ?>
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview">
+        <li class="nav-item">
+            <a href="<?= site_url('invited-guests') ?>" 
+            class="nav-link <?= $uri->getSegment(1) == 'invited-guests' && $uri->getSegment(2) == '' ? 'active' : '' ?>">
+            <i class="nav-icon fas fa-users"></i>
+            <p>Daftar Tamu</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="<?= site_url('invited-guests/create') ?>" 
+            class="nav-link <?= $uri->getSegment(1) == 'invited-guests' && $uri->getSegment(2) == 'create' ? 'active' : '' ?>">
+            <i class="nav-icon fas fa-user-plus"></i>
+            <p>Tambah Tamu</p>
+            </a>
+        </li>
+        <?php if (session('access_granted')): ?>
+            <li class="nav-item mt-3">
+              <hr class="mb-2 mt-0" style="border-top: 1px solid #4f5962;">
+              <a href="<?= site_url('access-token/logout') ?>" class="nav-link text-danger">
+                <i class="nav-icon fas fa-sign-out-alt"></i>
+                <p>Logout</p>
+              </a>
             </li>
-            <li class="nav-item">
-                <a href="<?= base_url('invited-guests/create') ?>" 
-                class="nav-link <?= $uri->getSegment(1) == 'invited-guests' && $uri->getSegment(2) == 'create' ? 'active' : '' ?>">
-                <i class="nav-icon fas fa-user-plus"></i>
-                <p>Tambah Tamu</p>
-                </a>
-            </li>
-        </ul>
-      </nav>
+        <?php endif; ?>
+      </ul>
+    </nav>
     </div>
   </aside>
 

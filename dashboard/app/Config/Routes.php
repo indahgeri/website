@@ -9,15 +9,23 @@ $routes->get('/', 'Home::index');
 $routes->get('countdown', 'Home::countdown');
 
 // -------------------------
+// Filter untuk akses token
+// -------------------------
+$routes->get('access-token', 'AccessToken::index');
+$routes->post('access-token/submit', 'AccessToken::submit');
+$routes->get('access-token/logout', 'AccessToken::logout');
+
+// -------------------------
 // CRUD Invited Guests
 // -------------------------
-$routes->get(   'invited-guests',             'InvitedGuests::index');
-$routes->get(   'invited-guests/create',      'InvitedGuests::create');
-$routes->post(  'invited-guests/store',       'InvitedGuests::store');
-$routes->get(   'invited-guests/edit/(:num)', 'InvitedGuests::edit/$1');
-$routes->post(  'invited-guests/update/(:num)','InvitedGuests::update/$1');
-$routes->post(  'invited-guests/delete/(:num)','InvitedGuests::delete/$1');
-
+$routes->group('invited-guests', ['filter' => 'tokenSession'], function($routes) {
+    $routes->get('/', 'InvitedGuests::index');
+    $routes->get('create', 'InvitedGuests::create');
+    $routes->post('store', 'InvitedGuests::store');
+    $routes->get('edit/(:num)', 'InvitedGuests::edit/$1');
+    $routes->post('update/(:num)', 'InvitedGuests::update/$1');
+    $routes->post('delete/(:num)', 'InvitedGuests::delete/$1');
+});
 // -------------------------
 // Modules (jika ada folder modules/…)
 // -------------------------
