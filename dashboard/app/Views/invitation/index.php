@@ -303,18 +303,6 @@
 
         <!-- Gallery Grid -->
         <div class="gallery-grid">
-            <!-- Gallery Item 1 -->
-            <div class="gallery-item" data-aos="fade" data-aos-duration="1500" data-aos-delay="100" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="<?= base_url('assets/images/bajuadat-indahgery-00.jpg') ?>">
-                <img src="<?= base_url('assets/images/bajuadat-indahgery-00.jpg') ?>" alt="Gallery 0">
-            </div>
-            <!-- Gallery Item 2 -->
-            <div class="gallery-item" data-aos="fade" data-aos-duration="1500" data-aos-delay="100" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="<?= base_url('assets/images/bajuadat-indahgery-01.jpg') ?>">
-                <img src="<?= base_url('assets/images/bajuadat-indahgery-01.jpg') ?>" alt="Gallery 0">
-            </div>
-            <!-- Gallery Item 3 -->
-            <div class="gallery-item" data-aos="fade" data-aos-duration="1500" data-aos-delay="600" data-bs-toggle="modal" data-bs-target="#imageModal" data-img="<?= base_url('assets/images/bajuadat-indahgery-02.jpg') ?>">
-                <img src="<?= base_url('assets/images/bajuadat-indahgery-02.jpg') ?>" alt="Gallery 6">
-            </div>
             <?php foreach($images as $i => $img): 
                 // delay AOS berjenjang
                 $delay = 100 + ($i * 100);
