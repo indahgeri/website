@@ -251,7 +251,7 @@
                                 </div>
                                 <div class="timeline-text">
                                     <h3 class="gold serif">Pertunangan</h3>
-                                    <p>Setelah menjalani hubungan selama kurang lebih 7 tahun, kami memantapkan hati untuk melangkah ke jenjang yang lebih serius. Dengan restu kedua keluarga, kami mengikat janji dalam sebuah pertunangan yang penuh makna.</p>
+                                    <p>Setelah menjalani hubungan selama kurang lebih 6 tahun, kami memantapkan hati untuk melangkah ke jenjang yang lebih serius. Dengan restu kedua keluarga, kami mengikat janji dalam sebuah pertunangan yang penuh makna.</p>
                                 </div>
                             </div>
                         </div>
