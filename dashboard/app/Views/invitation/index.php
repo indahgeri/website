@@ -47,7 +47,7 @@
             <div class="kepada">
                 <p data-aos="zoom-in-down" data-aos-duration="2000">Kepada Yth.</p>
                 <p data-aos="zoom-in-down" data-aos-duration="1000">Bapak/Ibu/Saudara/i</p>
-                <div class="nama-tamu" data-aos="fade-up" data-aos-duration="3000"><?= $guest['name']; ?></div>
+                <div class="nama-tamu" data-aos="fade-up" data-aos-duration="3000"><?= ucwords(strtolower($guestName)) ?></div>
             </div>
             <a href="#" id="bukaUndangan" class="btn btn-outline-light shadow"><i class="bi bi-envelope-open-fill me-2"></i>Buka Undangan</a>
         </div>

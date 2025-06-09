@@ -37,7 +37,7 @@ class Invite extends BaseController
         $images = $this->getGalleryImages();
 
         $data = [
-            'guest'  => $guest,
+            'guestName'  => $guest['name'],
             'images' => $images,
             // Tambahkan data lain seperti RSVP, acara, gallery, dll di sini
         ];
