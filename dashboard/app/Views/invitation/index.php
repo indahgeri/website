@@ -33,6 +33,7 @@
     <link href="<?= base_url('assets/css/profile.css?v='.filemtime(FCPATH.'assets/css/profile.css')); ?>" rel="stylesheet">
     <link href="<?= base_url('assets/css/story.css?v='.filemtime(FCPATH.'assets/css/story.css')); ?>" rel="stylesheet">
     <link href="<?= base_url('assets/css/gallery.css?v='.filemtime(FCPATH.'assets/css/gallery.css')); ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/css/wedding-event.css?v='.filemtime(FCPATH.'assets/css/wedding-event.css')); ?>" rel="stylesheet">
 </head>
 <body>
     <!-- Cover Section -->
@@ -173,23 +174,94 @@
         </div>
     </section>
 
+    <!-- SECTION : WEDDING EVENT
+     1.  Ornamen klasik tetap di sini
+     2.  Ikon menggunakan Bootstrap Icons
+     3.  AOS animasi dipertahankan
+    ------------------------------------------------------------>
+    <section id="wedding-event" class="container-fluid py-4 position-relative">
+
+        <!-- BACKDROP foto kabur (optional) -->
+        <div class="bg-overlay"></div>
+
+        <!-- Heading -->
+        <div class="event-heading mx-auto" data-aos="fade-down" data-aos-duration="1000">
+            <div class="heading-row d-flex align-items-center">
+                <span class="heading-main">Wedding</span>
+                <span class="heading-line flex-grow-1"></span>
+            </div>
+            <span class="heading-sub">Event</span>
+        </div>
+
+        <!-- Body / cards -->
+        <div class="container">
+            <div class="row g-4 justify-content-center">
+            <!-- Akad -->
+            <div class="col-12 col-md-6 col-lg-5">
+                <article class="card event-card h-100 shadow-lg" data-aos="fade-up">
+                <div class="card-body p-sm-4">
+                    <header class="d-flex align-items-center mb-3 gap-2">
+                    <i class="bi bi-flower1 event-icon"></i>
+                    <h3 class="event-title m-0">Akad Nikah</h3>
+                    </header>
+
+                    <ul class="event-details list-unstyled ps-0 mb-0">
+                        <li><i class="bi bi-calendar-event me-2 gold"></i>Kamis, 26 Juni 2025</li>
+                        <li><i class="bi bi-clock me-2 gold"></i>08.00 WIB – Selesai</li>
+                        <li><i class="bi bi-geo-alt me-2 gold"></i>Masjid Nurul Amin Pagaruyung</li>
+                    </ul>
+
+                    <a href="https://maps.app.goo.gl/ZudTERZwJmVRTYNKA"
+                    class="btn btn-outline-light btn-sm rounded-pill mt-3 w-100"
+                    target="_blank" rel="noopener">
+                    <i class="bi bi-map"></i> Lihat Lokasi
+                    </a>
+                </div>
+                </article>
+            </div>
+
+            <!-- Resepsi -->
+            <div class="col-12 col-md-6 col-lg-5">
+                <article class="card event-card h-100 shadow-lg" data-aos="fade-up" data-aos-delay="150">
+                <div class="card-body p-sm-4">
+                    <header class="d-flex align-items-center mb-3 gap-2">
+                    <i class="bi bi-cup-straw event-icon"></i>
+                    <h3 class="event-title m-0">Resepsi</h3>
+                    </header>
+
+                    <ul class="event-details list-unstyled ps-0 mb-0">
+                    <li><i class="bi bi-calendar-event me-2 gold"></i>Kamis, 26 Juni 2025</li>
+                    <li><i class="bi bi-clock me-2 gold"></i>10.00 WIB – Selesai</li>
+                    <li><i class="bi bi-geo-alt me-2 gold"></i>Komplek Perumahan PIP, Jorong Saruaso Barat, Nagari Saruaso, Kecamatan Tanjung Emas, Kabupaten Tanah Datar</li>
+                    </ul>
+
+                    <a href="https://maps.app.goo.gl/1rzpxRxCYmt2DUrQ7"
+                    class="btn btn-outline-light btn-sm rounded-pill mt-3 w-100"
+                    target="_blank" rel="noopener">
+                    <i class="bi bi-map"></i> Lihat Lokasi
+                    </a>
+                </div>
+                </article>
+            </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- Background yg akan tampil di semua section -->
     <div class="section-bg"></div>
     <!-- Section 3: Our Story -->
-    <section id="story" class="container py-5 position-relative">
-        <!-- Ornamen Klasik -->
-        <div class="classic-ornament top-left"></div>
-        <div class="classic-ornament top-right"></div>
-        <div class="classic-ornament bottom-left"></div>
-        <div class="classic-ornament bottom-right"></div>
+    <section id="story" class="container py-1 position-relative">
         
+        <!-- Heading -->
         <div class="story-container">
-            <h2 class="story-title serif text-center" data-aos="fade-down" data-aos-duration="1000">
-                <span class="title-decoration">❦</span>
-                Our Story
-                <span class="title-decoration">❦</span>
-            </h2>
+            <div class="event-heading mx-auto" data-aos="fade-down" data-aos-duration="1000">
+                <div class="heading-row d-flex align-items-center">
+                    <span class="heading-main">Indah & Gery</span>
+                    <span class="heading-line flex-grow-1"></span>
+                </div>
+                <span class="heading-sub">Story</span>
+            </div>
             
             <div class="timeline-classic">
                 <!-- Timeline Item 1 -->

@@ -1,0 +1,80 @@
+:root {
+  /* brand palette */
+  --brand-gold: #d3bc8c;
+  --brand-gold-dark: #b99d60;
+  --brand-cream: #fff8f0;
+  --brand-white: #ffffff;
+  --brand-overlay: rgba(26, 35, 45, .65); /* biru-abu gelap transparan */
+  /* fonts (fall-back) */
+  --font-base: 'Montserrat', 'Segoe UI', sans-serif;
+  --font-serif: 'Great Vibes', cursive;
+}
+
+/* SECTION --------------------------------------------------*/
+#wedding-event {
+  position: relative;
+  color: var(--brand-white);   /* default teks putih */
+  overflow: hidden;            /* potong overlay */
+  isolation: isolate;          /* hindari z-index leak */
+}
+#wedding-event .bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--brand-overlay);
+  backdrop-filter: blur(2px);
+  z-index: -1;
+}
+
+/* TITLE (sudah Anda buat) ---------------------------------*/
+.event-heading      { text-align:left; max-width:700px; }
+.heading-main       { font-family:var(--font-base); font-weight:700;
+                      font-size:clamp(2rem,1.3rem+2vw,3rem); }
+.heading-line       { height:1px; background:currentColor; opacity:.65; margin-left:1rem; }
+.heading-sub        { display:block; margin-top:.25rem;
+                      font-family:var(--font-serif); font-size: clamp(1.5rem, 1.2rem + 1vw, 2.2rem); }
+
+/* CARDS ----------------------------------------------------*/
+.event-card {
+  background: color-mix(in srgb, var(--brand-overlay) 30%, var(--brand-cream)); /* semi-trans */
+  border: 1px solid color-mix(in srgb, var(--brand-gold) 25%, transparent);
+  border-radius:1.25rem;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.event-card:hover,
+.event-card:focus-within {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, .25);
+}
+
+/* ICON + TITLE */
+.event-icon  { font-size:2rem; color:var(--brand-gold); flex-shrink:0; }
+.event-title { font-family:var(--font-serif); font-size:clamp(1.5rem,1.2rem+.5vw,2rem); }
+
+/* DETAILS LIST */
+.event-details li {
+  display:flex; gap:.45rem; align-items:flex-start;
+  font-size:1.05rem; line-height:1.55;
+}
+.event-details .gold { color:var(--brand-gold-dark); }
+
+/* BUTTONS */
+.event-card .btn {
+  font-size:.95rem;
+  padding:.55rem 1.25rem;
+  border-color:var(--brand-white);
+  color:var(--brand-white);
+}
+.event-card .btn:hover { background:var(--brand-gold-dark); border-color:var(--brand-gold-dark); }
+
+/* ALERT (note) */
+.alert-warning {
+  background:rgba(255, 193, 7, .2) !important; /* gold-ish transparan */
+  color:#fff;
+}
+
+/* MEDIA ----------------------------------------------------*/
+@media (max-width:575.98px) {
+  .event-card      { padding:1.25rem; }
+  .event-details li{ font-size:.96rem; }
+  .heading-line    { margin-left:.75rem; }
+}
