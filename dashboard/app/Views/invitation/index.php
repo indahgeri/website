@@ -354,7 +354,7 @@
             </div>
 
             <!-- Tambahan Quote dengan Desain Klasik -->
-            <div class="quote-wrapper text-center" data-aos="fade-up" data-aos-duration="1500">
+            <div class="quote-wrapper text-center mt-3" data-aos="fade-up" data-aos-duration="1500">
                 <div class="quote-classic">
                     <div class="quote-ornament top"></div>
                     <p class="quote-text">
@@ -375,8 +375,17 @@
     </section>
 
     <!-- Section 4: Galeri -->
-    <section id="galeri" class="container py-5">
-        <h2 class="section-title serif" data-aos="fade-down" data-aos-duration="1000">Gallery</h2>
+    <section id="galeri" class="container py-3">
+         <!-- BACKDROP foto kabur (optional) -->
+        <div class="bg-overlay"></div>
+        <!-- Heading -->
+        <div class="event-heading mx-auto" data-aos="fade-down" data-aos-duration="1000">
+            <div class="heading-row d-flex align-items-center">
+                <span class="heading-main">Gallery</span>
+                <span class="heading-line flex-grow-1"></span>
+            </div>
+            <span class="heading-sub"></span>
+        </div>
 
         <!-- Gallery Grid -->
         <div class="gallery-grid">

@@ -4,6 +4,14 @@
   padding-bottom: 3rem;
 }
 
+#galeri .bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  z-index: -1;
+}
+
 /* Title */
 #galeri .section-title {
   text-align: center;
