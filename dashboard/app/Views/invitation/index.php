@@ -198,7 +198,7 @@
             <div class="row g-4 justify-content-center">
             <!-- Akad -->
             <div class="col-12 col-md-6 col-lg-5">
-                <article class="card event-card h-100 shadow-lg" data-aos="fade-up">
+                <article class="card event-card h-100 shadow-lg" data-aos="fade-up" data-aos-duration="1500">
                 <div class="card-body p-sm-4">
                     <header class="d-flex align-items-center mb-3 gap-2">
                     <i class="bi bi-flower1 event-icon"></i>
@@ -222,7 +222,7 @@
 
             <!-- Resepsi -->
             <div class="col-12 col-md-6 col-lg-5">
-                <article class="card event-card h-100 shadow-lg" data-aos="fade-up" data-aos-delay="150">
+                <article class="card event-card h-100 shadow-lg" data-aos="fade-up" data-aos-delay="150" data-aos-duration="1500">
                 <div class="card-body p-sm-4">
                     <header class="d-flex align-items-center mb-3 gap-2">
                     <i class="bi bi-cup-straw event-icon"></i>
