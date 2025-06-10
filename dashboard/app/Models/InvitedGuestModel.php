@@ -8,7 +8,7 @@ class InvitedGuestModel extends Model
     protected $primaryKey    = 'id';
     protected $allowedFields = [
         'name', 'slug', 'phone', 'email','detail',
-        'is_sent', 'is_opened', 'rsvp_status'
+        'is_sent', 'is_opened', 'opened_at', 'rsvp_status'
     ];
 
     // timestamps
