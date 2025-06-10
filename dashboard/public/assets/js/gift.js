@@ -4,7 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.btn-copy').forEach(btn => {
     btn.addEventListener('click', () => {
       const acc = btn.closest('.gift-acc').dataset.account;
-      copyToClipboard(acc).then(() => toast.show());
+      copyToClipboard(acc).then(() => {
+        btn.classList.add('copied');
+        setTimeout(() => btn.classList.remove('copied'), 700);
+        toast.show();
+      });
     });
   });
 

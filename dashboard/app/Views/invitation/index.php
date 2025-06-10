@@ -431,17 +431,22 @@
     <!-- =============================================
      SECTION : WEDDING GIFT  (Amplop Digital)
     ==============================================-->
-    <section id="gift" class="container-fluid py-5 position-relative">
-        <div class="bg-overlay"></div>
+    <section id="gift" class="container-fluid py-3 position-relative">
+        <!-- <div class="bg-overlay"></div> -->
 
         <!-- Heading (re-use komponen heading) -->
-        <div class="event-heading mx-auto" data-aos="fade-down">
+        <div class="event-heading mx-auto mb-3" data-aos="fade-down">
             <div class="heading-row d-flex align-items-center">
-            <span class="heading-main">Wedding&nbsp;Gift</span>
-            <span class="heading-line flex-grow-1"></span>
+                <span class="heading-main">Wedding Gift</span>
+                <span class="heading-line flex-grow-1"></span>
             </div>
-            <span class="heading-sub">Amplop digital</span>
+            <span class="heading-sub">Tanda kasih untuk pengantin</span>
         </div>
+
+        <p class="gift-lead text-center px-3 py-2 mb-4 rounded-4 shadow-sm position-relative" data-aos="fade-down" data-aos-delay="80">
+            <i class="bi bi-gift-fill me-2 gold" style="font-size:1.3em;"></i>
+            Kebahagiaan kami sempurna dengan kehadiran, doa, dan restu Anda.<br class="d-none d-md-block"> Namun jika ingin turut berbagi melalui hadiah, silakan gunakan rekening berikut sebagai tanda cinta.
+        </p>
 
         <!-- Cards -->
         <div class="container" style="max-width:760px">
@@ -449,7 +454,7 @@
             <!-- Indah -->
             <div class="col-12 col-md-6">
                 <article class="gift-card glass-card text-center h-100 shadow-lg p-4">
-                    <img src="https://www.bankmandiri.co.id/image/layout_set_logo?img_id=31567&t=1742789528482" alt="Bank Mandiri"
+                    <img src="<?= base_url('assets/img/bank-mandiri.png'); ?>" alt="Bank Mandiri"
                         class="bank-logo mb-3" loading="lazy" width="120" height="34">
                     <h4 class="gift-name mb-1">Indah Permata Sari</h4>
                     <p class="gift-bank small mb-3">Bank Mandiri</p>
@@ -469,7 +474,7 @@
             <!-- Gery -->
             <div class="col-12 col-md-6">
                 <article class="gift-card glass-card text-center h-100 shadow-lg p-4">
-                    <img src="https://www.bankmandiri.co.id/image/layout_set_logo?img_id=31567&t=1742789528482" alt="Bank Mandiri"
+                    <img src="<?= base_url('assets/img/bank-mandiri.png'); ?>" alt="Bank Mandiri"
                         class="bank-logo mb-3" loading="lazy" width="120" height="34">
                     <h4 class="gift-name mb-1">Gery Anuggrah</h4>
                     <p class="gift-bank small mb-3">Bank Mandiri</p>
