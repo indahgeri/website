@@ -21,6 +21,7 @@
             <th>Detail</th>
             <th>Terkirim</th>
             <th>Dibuka</th>
+            <th>Waktu Dibuka</th>
             <th>RSVP</th>
             <th>Waktu</th>
             <th class="text-center">Aksi</th>
@@ -35,6 +36,7 @@
             <td><?= esc($g['detail']) ?></td>
             <td class="text-center"><?= $g['is_sent'] ? '✔️' : '❌' ?></td>
             <td class="text-center"><?= $g['is_opened'] ? '✔️' : '❌' ?></td>
+            <td><?= esc($g['opened_at']) ?></td>
             <td><?= esc($g['rsvp_status']) ?></td>
             <td><?= date('d/m/Y H:i', strtotime($g['created_at'])) ?></td>
             <td class="text-center">
