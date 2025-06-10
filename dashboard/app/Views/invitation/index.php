@@ -633,9 +633,11 @@
     <section id="closing-section" class="closing-section d-flex flex-column align-items-center justify-content-center">
         <div class="closing-slideshow mb-4">
             <div class="closing-slide active" style="background-image:url('/assets/images/bajuadat-indahgery-00.jpg')"></div>
-            <div class="closing-slide" style="background-image:url('/assets/images/kasual-01.jpg')"></div>
-            <div class="closing-slide" style="background-image:url('/assets/images/kasual-07.jpg')"></div>
-            <div class="closing-slide" style="background-image:url('/assets/images/bajuadat-gery.jpg')"></div>
+            <?php foreach($images as $i => $img):
+                $url   = base_url("assets/images/{$img}").'?v='.filemtime(FCPATH."assets/images/{$img}");
+                ?>
+                <div class="closing-slide" style="background-image:url(<?= $url ?>)"></div>
+            <?php endforeach; ?>
         </div>
         <div class="closing-text text-center">
             <p class="mb-2" style="font-size:1.1em; color:#fff; text-shadow:0 2px 8px #0008;">Terima kasih atas doa, restu, dan kehadiran Anda yang sangat berarti bagi kami.<br>Semoga kebahagiaan dan cinta selalu menyertai kita semua.</p>
