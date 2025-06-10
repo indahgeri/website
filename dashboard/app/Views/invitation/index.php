@@ -34,6 +34,8 @@
     <link href="<?= base_url('assets/css/story.css?v='.filemtime(FCPATH.'assets/css/story.css')); ?>" rel="stylesheet">
     <link href="<?= base_url('assets/css/gallery.css?v='.filemtime(FCPATH.'assets/css/gallery.css')); ?>" rel="stylesheet">
     <link href="<?= base_url('assets/css/wedding-event.css?v='.filemtime(FCPATH.'assets/css/wedding-event.css')); ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/css/rsvp.css?v='.filemtime(FCPATH.'assets/css/rsvp.css')); ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/css/wishes.css?v='.filemtime(FCPATH.'assets/css/wishes.css')); ?>" rel="stylesheet">
 </head>
 <body>
     <!-- Cover Section -->
@@ -377,7 +379,7 @@
     <!-- Section 4: Galeri -->
     <section id="galeri" class="container py-3">
          <!-- BACKDROP foto kabur (optional) -->
-        <div class="bg-overlay"></div>
+        <!-- <div class="bg-overlay"></div> -->
         <!-- Heading -->
         <div class="event-heading mx-auto" data-aos="fade-down" data-aos-duration="1000">
             <div class="heading-row d-flex align-items-center">
@@ -425,6 +427,123 @@
         </div>
     </section>
 
+    
+    <!-- ==============================
+     SECTION : RSVP
+    ==================================-->
+    <section id="rsvp" class="container-fluid py-5 position-relative">
+        <div class="bg-overlay"></div>
+
+        <!-- Heading (pakai style sama dgn Wedding Event) -->
+        <div class="event-heading mx-auto" data-aos="fade-down">
+            <div class="heading-row d-flex align-items-center">
+            <span class="heading-main">RSVP</span>
+            <span class="heading-line flex-grow-1"></span>
+            </div>
+            <span class="heading-sub">Konfirmasi Kehadiran</span>
+        </div>
+
+        <!-- Form -->
+        <div class="container py-3" style="max-width:650px">
+            <form class="needs-validation glass-card p-4 p-md-5 shadow-lg"
+                action="/rsvp/submit" method="POST" novalidate
+                data-aos="fade-up" data-aos-delay="150">
+
+                <!-- Nama Tamu -->
+                <div class="mb-3">
+                    <label for="guestName" class="form-label">Nama Lengkap</label>
+                    <input type="text" class="form-control" id="guestName" name="name"
+                        placeholder="Mis. <?= $guestName ?>" required>
+                    <div class="invalid-feedback">Nama wajib diisi.</div>
+                </div>
+
+                <!-- Konfirmasi Kehadiran -->
+                <fieldset class="mb-3">
+                    <legend class="form-label mb-2">Konfirmasi kehadiran, ya 😊</legend>
+                    <div class="btn-group w-100" role="group" aria-label="Attendance">
+                    <input type="radio" class="btn-check" name="attend" id="attendYes"
+                            value="yes" required>
+                    <label class="btn btn-outline-light flex-fill" for="attendYes">
+                        <i class="bi bi-check-circle me-1"></i> Hadir
+                    </label>
+
+                    <input type="radio" class="btn-check" name="attend" id="attendNo"
+                            value="no" required>
+                    <label class="btn btn-outline-light flex-fill" for="attendNo">
+                        <i class="bi bi-x-circle me-1"></i> Tidak hadir
+                    </label>
+                    </div>
+                    <div class="invalid-feedback d-block">Mohon pilih salah satu.</div>
+                </fieldset>
+
+                <!-- Jumlah Tamu (muncul hanya jika 'Hadir') -->
+                <div class="mb-3 d-none" id="guestCountWrapper">
+                    <label for="guestCount" class="form-label">Jumlah orang yang hadir</label>
+                    <input type="number" class="form-control" id="guestCount"
+                        name="count" min="1" max="5" value="1">
+                </div>
+
+                <!-- Pesan / Ucapan -->
+                <div class="mb-4">
+                    <label for="message" class="form-label">Titip doa & pesan</label>
+                    <textarea class="form-control" id="message" name="message"
+                            rows="3" placeholder="Selamat menempuh hidup baru…"></textarea>
+                </div>
+
+                <!-- Tombol Submit -->
+                <div class="d-grid">
+                    <button class="btn btn-gold rounded-pill py-2" type="submit">
+                    <i class="bi bi-envelope-heart me-1"></i> Kirim RSVP
+                    </button>
+                </div>
+
+                <!-- Pesan sukses (hidden default) -->
+                <div class="alert alert-success mt-4 d-none" id="rsvpSuccess">
+                    Terima kasih! RSVP Anda sudah tercatat.
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- ===========================================
+     SECTION : DOA & PESAN
+    ==============================================-->
+    <section id="wishes" class="container-fluid py-5 position-relative">
+        <div class="bg-overlay"></div>
+
+        <!-- Heading (reuse komponen heading) -->
+        <div class="event-heading mx-auto" data-aos="fade-down">
+            <div class="heading-row d-flex align-items-center">
+            <span class="heading-main">Doa &amp; Pesan</span>
+            <span class="heading-line flex-grow-1"></span>
+            </div>
+            <span class="heading-sub">Warm wishes for us</span>
+        </div>
+
+        <!-- List wrapper -->
+        <div class="container" style="max-width:760px">
+            <div class="wish-scroll glass-card p-3 p-sm-4 shadow-lg" data-aos="fade-up" data-aos-delay="150">
+            <ul id="wishList" class="list-unstyled m-0">
+                <!-- Sementara static contoh—akan diisi JS -->
+                <li class="wish-card">
+                    <div class="wish-header">
+                        <span class="wish-avatar">A</span>
+                        <div>
+                            <h5 class="wish-name">Ayu Widya</h5>
+                            <time class="wish-time" datetime="2025-06-12T14:30">12 Jun 2025 14:30</time>
+                        </div>
+                    </div>
+                    <p class="wish-text">Selamat menempuh hidup baru. Semoga langgeng sampai akhir hayat 💖</p>
+                </li>
+            </ul>
+            <!-- Loader animasi -->
+            <div id="wishLoader" class="text-center py-3 d-none">
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- Auto Scroll Control Button -->
     <button id="autoScrollControl" class="floating-button auto-scroll-control" aria-label="Kontrol Auto Scroll">
@@ -456,6 +575,8 @@
         AOS.init();
     </script>
     <script src="<?= base_url('assets/js/apps.js?v='.filemtime(FCPATH.'assets/js/apps.js')); ?>"></script>
-    <script src="<?= base_url('assets/js/countdown.js'); ?>"></script>
+    <script src="<?= base_url('assets/js/countdown.js?v='.filemtime(FCPATH.'assets/js/countdown.js')); ?>"></script>
+    <script src="<?= base_url('assets/js/rsvp.js?v='.filemtime(FCPATH.'assets/js/rsvp.js')); ?>"></script>
+    <script src="<?= base_url('assets/js/wishes.js?v='.filemtime(FCPATH.'assets/js/wishes.js')); ?>"></script>
 </body>
 </html>

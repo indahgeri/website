@@ -1,0 +1,45 @@
+/* ===================== COLORS & BASE ===================== */
+:root {
+  --brand-gold: #d3bc8c;
+  --brand-gold-dark: #b99d60;
+  --brand-overlay: rgba(26,35,45,.65);
+}
+
+#rsvp { position:relative; color:#fff; overflow:hidden; }
+#rsvp .bg-overlay {
+  position:absolute; inset:0;
+  background:var(--brand-overlay);
+  backdrop-filter:blur(2px);
+  z-index:-1;
+}
+
+/* ---- kaca buram (glass-card) --------------------------- */
+.glass-card {
+  background: color-mix(in srgb, var(--brand-overlay) 35%, #ffffff);
+  border:1px solid color-mix(in srgb, var(--brand-gold) 25%, transparent);
+  border-radius:1.25rem;
+}
+
+/* ---- custom button gold -------------------------------- */
+.btn-gold {
+  background:var(--brand-gold-dark); border:none; color:#fff;
+  transition:filter .2s;
+}
+.btn-gold:hover, .btn-gold:focus { filter:brightness(1.1); }
+
+/* ---- form & radios ------------------------------------- */
+.form-label   { font-weight:500; font-size: clamp(0.9rem, 0.8rem + 0.5vw, 1.1rem);}
+@media (min-width: 576px) {                 /* ≥ iPhone Plus / small tablet */
+  .form-label { font-size: 1rem; }
+}
+@media (min-width: 992px) {                 /* desktop */
+  .form-label { font-size: 1.1rem; }
+}
+.btn-check:checked + .btn { background:var(--brand-gold); border-color:var(--brand-gold); color:#1a1a1a; }
+.btn-outline-light { border-color:#fff; color:#fff; }
+.btn-outline-light:hover { background:#fff; color:#1a1a1a; }
+
+/* ---- small screens tweaks ------------------------------ */
+@media (max-width:575.98px){
+  .glass-card { padding:1.75rem 1.25rem; }
+}
