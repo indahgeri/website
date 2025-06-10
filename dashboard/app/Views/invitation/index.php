@@ -37,6 +37,7 @@
     <link href="<?= base_url('assets/css/gift.css?v='.filemtime(FCPATH.'assets/css/gift.css')); ?>" rel="stylesheet">
     <link href="<?= base_url('assets/css/rsvp.css?v='.filemtime(FCPATH.'assets/css/rsvp.css')); ?>" rel="stylesheet">
     <link href="<?= base_url('assets/css/wishes.css?v='.filemtime(FCPATH.'assets/css/wishes.css')); ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/css/closing-section.css?v='.filemtime(FCPATH.'assets/css/closing-section.css')); ?>" rel="stylesheet">
 </head>
 <body>
     <!-- Cover Section -->
@@ -627,6 +628,20 @@
         </div>
     </section>
 
+    
+    <!-- Section Penutup: Slideshow Animasi & Kalimat Akhir -->
+    <section id="closing-section" class="closing-section d-flex flex-column align-items-center justify-content-center">
+        <div class="closing-slideshow mb-4">
+            <div class="closing-slide active" style="background-image:url('/assets/images/bajuadat-indahgery-00.jpg')"></div>
+            <div class="closing-slide" style="background-image:url('/assets/images/kasual-01.jpg')"></div>
+            <div class="closing-slide" style="background-image:url('/assets/images/kasual-07.jpg')"></div>
+            <div class="closing-slide" style="background-image:url('/assets/images/bajuadat-gery.jpg')"></div>
+        </div>
+        <div class="closing-text text-center">
+            <p class="mb-2" style="font-size:1.1em; color:#fff; text-shadow:0 2px 8px #0008;">Terima kasih atas doa, restu, dan kehadiran Anda yang sangat berarti bagi kami.<br>Semoga kebahagiaan dan cinta selalu menyertai kita semua.</p>
+            <h2 class="wedding-title mb-0 py-3">The Wedding of <br><span class="gold">Indah & Gery</span></h2>
+        </div>
+    </section>
 
     <!-- Auto Scroll Control Button -->
     <button id="autoScrollControl" class="floating-button auto-scroll-control" aria-label="Kontrol Auto Scroll">
@@ -662,5 +677,6 @@
     <script src="<?= base_url('assets/js/gift.js?v='.filemtime(FCPATH.'assets/js/gift.js')); ?>"></script>
     <script src="<?= base_url('assets/js/rsvp.js?v='.filemtime(FCPATH.'assets/js/rsvp.js')); ?>"></script>
     <script src="<?= base_url('assets/js/wishes.js?v='.filemtime(FCPATH.'assets/js/wishes.js')); ?>"></script>
+    <script src="<?= base_url('assets/js/closing-section.js?v='.filemtime(FCPATH.'assets/js/closing-section.js')); ?>"></script>
 </body>
 </html>
