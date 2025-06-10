@@ -89,6 +89,7 @@ class Invite extends BaseController
 
         $rsvpModel = new \App\Models\RsvpModel();
         $data = [
+            'guest_slug'      => $slug,
             'guest_name'      => $name,
             'attendance'      => $attend,
             'total_attendees' => $attend === 'yes' ? (int)$count : 0,

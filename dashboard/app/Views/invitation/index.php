@@ -34,6 +34,7 @@
     <link href="<?= base_url('assets/css/story.css?v='.filemtime(FCPATH.'assets/css/story.css')); ?>" rel="stylesheet">
     <link href="<?= base_url('assets/css/gallery.css?v='.filemtime(FCPATH.'assets/css/gallery.css')); ?>" rel="stylesheet">
     <link href="<?= base_url('assets/css/wedding-event.css?v='.filemtime(FCPATH.'assets/css/wedding-event.css')); ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/css/gift.css?v='.filemtime(FCPATH.'assets/css/gift.css')); ?>" rel="stylesheet">
     <link href="<?= base_url('assets/css/rsvp.css?v='.filemtime(FCPATH.'assets/css/rsvp.css')); ?>" rel="stylesheet">
     <link href="<?= base_url('assets/css/wishes.css?v='.filemtime(FCPATH.'assets/css/wishes.css')); ?>" rel="stylesheet">
 </head>
@@ -427,6 +428,81 @@
         </div>
     </section>
 
+    <!-- =============================================
+     SECTION : WEDDING GIFT  (Amplop Digital)
+    ==============================================-->
+    <section id="gift" class="container-fluid py-5 position-relative">
+        <div class="bg-overlay"></div>
+
+        <!-- Heading (re-use komponen heading) -->
+        <div class="event-heading mx-auto" data-aos="fade-down">
+            <div class="heading-row d-flex align-items-center">
+            <span class="heading-main">Wedding&nbsp;Gift</span>
+            <span class="heading-line flex-grow-1"></span>
+            </div>
+            <span class="heading-sub">Amplop digital</span>
+        </div>
+
+        <!-- Cards -->
+        <div class="container" style="max-width:760px">
+            <div class="row g-4 justify-content-center" data-aos="fade-up" data-aos-delay="150">
+            <!-- Indah -->
+            <div class="col-12 col-md-6">
+                <article class="gift-card glass-card text-center h-100 shadow-lg p-4">
+                    <img src="https://www.bankmandiri.co.id/image/layout_set_logo?img_id=31567&t=1742789528482" alt="Bank Mandiri"
+                        class="bank-logo mb-3" loading="lazy" width="120" height="34">
+                    <h4 class="gift-name mb-1">Indah Permata Sari</h4>
+                    <p class="gift-bank small mb-3">Bank Mandiri</p>
+                    <div class="gift-acc mb-3" data-account="1110020609349">
+                        <span class="acc-number">1110&nbsp;0206&nbsp;0934&nbsp;9</span>
+                        <button class="btn btn-copy ms-2" aria-label="Salin"
+                                data-bs-toggle="tooltip" data-bs-placement="top" title="Salin">
+                        <i class="bi bi-clipboard"></i>
+                        </button>
+                    </div>
+                    <!-- Optional QR -->
+                    <!-- <img src="/assets/img/qr/indah_qr.png" alt="QR Mandiri Indah" loading="lazy"
+                        class="qr-img mt-2 rounded" width="140" height="140"> -->
+                </article>
+            </div>
+
+            <!-- Gery -->
+            <div class="col-12 col-md-6">
+                <article class="gift-card glass-card text-center h-100 shadow-lg p-4">
+                    <img src="https://www.bankmandiri.co.id/image/layout_set_logo?img_id=31567&t=1742789528482" alt="Bank Mandiri"
+                        class="bank-logo mb-3" loading="lazy" width="120" height="34">
+                    <h4 class="gift-name mb-1">Gery Anuggrah</h4>
+                    <p class="gift-bank small mb-3">Bank Mandiri</p>
+                    <div class="gift-acc mb-3" data-account="1080024249527">
+                        <span class="acc-number">1080&nbsp;0242&nbsp;4952&nbsp;7</span>
+                        <button class="btn btn-copy ms-2" aria-label="Salin"
+                                data-bs-toggle="tooltip" data-bs-placement="top" title="Salin">
+                        <i class="bi bi-clipboard"></i>
+                        </button>
+                    </div>
+                    <!-- Optional QR -->
+                    <!-- <img src="/assets/img/qr/gery_qr.png" alt="QR Mandiri Gery" loading="lazy"
+                        class="qr-img mt-2 rounded" width="140" height="140"> -->
+                </article>
+            </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap Toast -->
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="copyToast" class="toast align-items-center text-bg-success border-0"
+                role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                Nomor rekening disalin!
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto"
+                        data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            </div>
+        </div>
+    </section>
+    
     
     <!-- ==============================
      SECTION : RSVP
@@ -487,7 +563,7 @@
 
                 <!-- Pesan / Ucapan -->
                 <div class="mb-4">
-                    <label for="message" class="form-label">Titip Doa & Harapan</label>
+                    <label for="message" class="form-label">Sampaikan pesan, untaian doa, serta harapan indah untuk kami. </label>
                     <textarea class="form-control" id="message" name="message"
                             rows="3" placeholder="Selamat menempuh hidup baru…"></textarea>
                 </div>
@@ -516,7 +592,7 @@
         <!-- Heading (reuse komponen heading) -->
         <div class="event-heading mx-auto" data-aos="fade-down">
             <div class="heading-row d-flex align-items-center">
-            <span class="heading-main">Doa &amp; Harapan</span>
+            <span class="heading-main">Pesan, Doa &amp; Harapan</span>
             <span class="heading-line flex-grow-1"></span>
             </div>
             <span class="heading-sub">Warm wishes for us</span>
@@ -578,6 +654,7 @@
     </script>
     <script src="<?= base_url('assets/js/apps.js?v='.filemtime(FCPATH.'assets/js/apps.js')); ?>"></script>
     <script src="<?= base_url('assets/js/countdown.js?v='.filemtime(FCPATH.'assets/js/countdown.js')); ?>"></script>
+    <script src="<?= base_url('assets/js/gift.js?v='.filemtime(FCPATH.'assets/js/gift.js')); ?>"></script>
     <script src="<?= base_url('assets/js/rsvp.js?v='.filemtime(FCPATH.'assets/js/rsvp.js')); ?>"></script>
     <script src="<?= base_url('assets/js/wishes.js?v='.filemtime(FCPATH.'assets/js/wishes.js')); ?>"></script>
 </body>
