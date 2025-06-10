@@ -28,17 +28,24 @@ class Invite extends BaseController
             if (!$guest) {
                 throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
             }
+            // Update status opened jika belum pernah dibuka
+            if (empty($guest['is_opened']) || !$guest['is_opened']) {
+                $this->guestModel->where('slug', $slug)
+                    ->set([
+                        'is_opened' => 1,
+                        'opened_at' => date('Y-m-d H:i:s')
+                    ])->update();
+            }
         } catch (\Exception $e) {
             log_message('error', $e->getMessage());
             throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
-            // return redirect()->back()->with('error', 'Terjadi kesalahan dalam memproses permintaan');
         }
 
         $images = $this->getGalleryImages();
 
         $data = [
             'guestName'  => $guest['name'],
-            'slug'  => $guest['slug'],
+            'slug' => $slug,
             'images' => $images,
             // Tambahkan data lain seperti RSVP, acara, gallery, dll di sini
         ];
