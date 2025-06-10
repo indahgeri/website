@@ -38,6 +38,7 @@ class Invite extends BaseController
 
         $data = [
             'guestName'  => $guest['name'],
+            'slug'  => $guest['slug'],
             'images' => $images,
             // Tambahkan data lain seperti RSVP, acara, gallery, dll di sini
         ];
@@ -61,5 +62,70 @@ class Invite extends BaseController
 
         // reset numeric keys dan kembalikan sebagai array berurutan
         return array_values($images);
+    }
+
+    public function submit()
+    {
+        if (!$this->request->isAJAX()) {
+            return $this->response->setStatusCode(400)->setJSON(['success' => false, 'message' => 'Invalid request']);
+        }
+
+        $name    = $this->request->getPost('name');
+        $attend  = $this->request->getPost('attend');
+        $count   = $this->request->getPost('count') ?: 1;
+        $message = $this->request->getPost('message');
+        $slug    = $this->request->getPost('slug') ?? $this->request->getGet('slug'); // slug bisa dikirim via hidden input atau query
+
+        if (!$name || !$attend) {
+            return $this->response->setJSON(['success' => false, 'message' => 'Nama dan kehadiran wajib diisi.']);
+        }
+
+        $rsvpModel = new \App\Models\RsvpModel();
+        $data = [
+            'guest_name'      => $name,
+            'attendance'      => $attend,
+            'total_attendees' => $attend === 'yes' ? (int)$count : 0,
+            'message'         => $message,
+            'created_at'      => date('Y-m-d H:i:s')
+        ];
+        $rsvpModel->insert($data);
+
+        // Update status RSVP di invited_guests jika slug tersedia
+        if ($slug) {
+            $guestModel = new \App\Models\InvitedGuestModel();
+            $guestModel->where('slug', $slug)->set(['rsvp_status' => $attend])->update();
+        }
+
+        $now = date('Y-m-d\TH:i');
+        $nowFormatted = date('d M Y H:i');
+
+        return $this->response->setJSON([
+            'success' => true,
+            'wish' => [
+                'name' => $name,
+                'time' => $now,
+                'timeFormatted' => $nowFormatted,
+                'message' => $message
+            ]
+        ]);
+    }
+
+    // Ambil wishes terbaru (misal 20 terakhir)
+    public function getWishes()
+    {
+        // Jangan batasi hanya AJAX agar tidak error 400
+        $rsvpModel = new \App\Models\RsvpModel();
+        $wishes = $rsvpModel->orderBy('created_at', 'DESC')->findAll(20);
+
+        $result = [];
+        foreach ($wishes as $wish) {
+            $result[] = [
+                'name' => $wish['guest_name'],
+                'time' => date('Y-m-d\TH:i', strtotime($wish['created_at'])),
+                'message' => $wish['message']
+            ];
+        }
+        // Kembalikan array wishes di key 'wishes' agar JS bisa membaca data.wishes
+        return $this->response->setJSON(['wishes' => $result]);
     }
 }

@@ -24,4 +24,58 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   yesRadio.addEventListener('change', toggleGuestCount);
   document.getElementById('attendNo').addEventListener('change', toggleGuestCount);
+
+  // RSVP AJAX submit & auto append wish
+  const rsvpForm = document.getElementById('rsvpForm');
+  if (rsvpForm) {
+    rsvpForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      if (!rsvpForm.checkValidity()) {
+        rsvpForm.classList.add('was-validated');
+        return;
+      }
+
+      const formData = new FormData(rsvpForm);
+      fetch(rsvpForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'X-Requested-With': 'XMLHttpRequest' }
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          document.getElementById('rsvpSuccess').classList.remove('d-none');
+          rsvpForm.reset();
+          rsvpForm.classList.remove('was-validated');
+          document.getElementById('guestCountWrapper').classList.add('d-none');
+          if (data.wish) addWishToList(data.wish);
+          // Trigger reload wishes agar wishes.js yang handle
+          document.dispatchEvent(new Event('wishes:reload'));
+        } else {
+          alert(data.message || 'Gagal mengirim RSVP.');
+        }
+      })
+      .catch(() => alert('Terjadi kesalahan. Silakan coba lagi.'));
+    });
+  }
+
+  function addWishToList(wish) {
+    const wishList = document.getElementById('wishList');
+    if (!wishList) return;
+    const li = document.createElement('li');
+    li.className = 'wish-card';
+    li.innerHTML = `
+      <div class="wish-header">
+        <span class="wish-avatar">${wish.name.charAt(0).toUpperCase()}</span>
+        <div>
+          <h5 class="wish-name">${wish.name}</h5>
+          <time class="wish-time" datetime="${wish.time}">${wish.timeFormatted}</time>
+        </div>
+      </div>
+      <p class="wish-text">${wish.message}</p>
+    `;
+    wishList.prepend(li);
+  }
 });

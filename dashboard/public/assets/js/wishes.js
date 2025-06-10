@@ -3,12 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const loader = document.getElementById('wishLoader');
 
   // ambil pesan
-  fetch('/rsvp/messages')
+  fetch('/rsvp/wishes')
     .then(res => res.ok ? res.json() : Promise.reject(res))
     .then(data => {
       // hapus contoh pertama
       list.innerHTML = '';
-      data.forEach(w => list.appendChild(renderWish(w)));
+      (data.wishes || []).forEach(w => list.appendChild(renderWish(w)));
     })
     .catch(()=> console.error('Gagal memuat ucapan'))
     .finally(()=> loader.classList.add('d-none'));
@@ -39,4 +39,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const d=new Date(t.replace(/ /,'T'));
     return d.toLocaleString('id-ID',{ day:'2-digit', month:'short', year:'numeric', hour:'2-digit', minute:'2-digit' });
   }
+
+  document.addEventListener('wishes:reload', () => {
+    loader.classList.remove('d-none');
+    fetch('/rsvp/wishes')
+      .then(res => res.ok ? res.json() : Promise.reject(res))
+      .then(data => {
+        list.innerHTML = '';
+        (data.wishes || []).forEach(w => list.appendChild(renderWish(w)));
+      })
+      .catch(()=> console.error('Gagal memuat ucapan'))
+      .finally(()=> loader.classList.add('d-none'));
+  });
 });

@@ -50,6 +50,8 @@ foreach ($modules as $module) {
 
 // Format /invite/elang-surya
 $routes->get('invite/(:segment)', 'Invite::index/$1');
+$routes->post('rsvp/submit', 'Invite::submit');
+$routes->get('rsvp/wishes', 'Invite::getWishes');
 
 // Catch-all fallback (taruh paling akhir)
 $routes->get('(:segment)', 'Invite::index/$1');

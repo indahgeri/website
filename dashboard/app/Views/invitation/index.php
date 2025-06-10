@@ -445,10 +445,12 @@
 
         <!-- Form -->
         <div class="container py-3" style="max-width:650px">
-            <form class="needs-validation glass-card p-4 p-md-5 shadow-lg"
+            <form id="rsvpForm" class="needs-validation glass-card p-4 p-md-5 shadow-lg"
                 action="/rsvp/submit" method="POST" novalidate
                 data-aos="fade-up" data-aos-delay="150">
 
+                <!-- slug -->
+                <input type="hidden" name="slug" value="<?= $slug ?>">
                 <!-- Nama Tamu -->
                 <div class="mb-3">
                     <label for="guestName" class="form-label">Nama Lengkap</label>
@@ -485,7 +487,7 @@
 
                 <!-- Pesan / Ucapan -->
                 <div class="mb-4">
-                    <label for="message" class="form-label">Titip doa & pesan</label>
+                    <label for="message" class="form-label">Titip Doa & Harapan</label>
                     <textarea class="form-control" id="message" name="message"
                             rows="3" placeholder="Selamat menempuh hidup baru…"></textarea>
                 </div>
