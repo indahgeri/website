@@ -514,7 +514,7 @@
         <!-- Heading (reuse komponen heading) -->
         <div class="event-heading mx-auto" data-aos="fade-down">
             <div class="heading-row d-flex align-items-center">
-            <span class="heading-main">Doa &amp; Pesan</span>
+            <span class="heading-main">Doa &amp; Harapan</span>
             <span class="heading-line flex-grow-1"></span>
             </div>
             <span class="heading-sub">Warm wishes for us</span>
