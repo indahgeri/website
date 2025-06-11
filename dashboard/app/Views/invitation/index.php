@@ -189,7 +189,7 @@
     <section id="wedding-event" class="container-fluid py-4 position-relative">
 
         <!-- BACKDROP foto kabur (optional) -->
-        <div class="bg-overlay"></div>
+        <!-- <div class="bg-overlay"></div> -->
 
         <!-- Heading -->
         <div class="event-heading mx-auto" data-aos="fade-down" data-aos-duration="1000">
@@ -517,7 +517,7 @@
      SECTION : RSVP
     ==================================-->
     <section id="rsvp" class="container-fluid py-5 position-relative">
-        <div class="bg-overlay"></div>
+        <!-- <div class="bg-overlay"></div> -->
 
         <!-- Heading (pakai style sama dgn Wedding Event) -->
         <div class="event-heading mx-auto" data-aos="fade-down" data-aos-duration="1500">
