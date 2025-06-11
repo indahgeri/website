@@ -6,7 +6,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"> -->
+    <link rel="stylesheet" href="/assets/css/normalize.min.css">
     <title>Undangan Pernikahan Indah & Gery</title>
     <link rel="icon" type="image/x-icon" href="<?= base_url('favicon.ico') ?>">
     <link rel="apple-touch-icon" sizes="180x180" href="<?= base_url('favicon.ico') ?>">
