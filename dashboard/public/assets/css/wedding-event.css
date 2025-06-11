@@ -35,9 +35,10 @@
 
 /* CARDS ----------------------------------------------------*/
 .event-card {
-  background: color-mix(in srgb, var(--brand-overlay) 30%, var(--brand-cream)); /* semi-trans */
+  background: color-mix(in srgb, var(--brand-overlay) 30%, var(--brand-overlay)); /* semi-trans */
   border: 1px solid color-mix(in srgb, var(--brand-gold) 25%, transparent);
   border-radius:1.25rem;
+  color:var(--brand-white);
   transition: transform .25s ease, box-shadow .25s ease;
 }
 .event-card:hover,
