@@ -25,7 +25,7 @@
 
   <!-- Preloader -->
 <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake rounded-circle shadow" src="<?= base_url('logo.png'); ?>" alt="Logo" height="460" width="460" style="object-fit:cover;">
+    <img class="animation__shake rounded-circle shadow" src="<?= base_url('logo.png'); ?>" alt="Logo" height="360" width="360" style="object-fit:cover;">
 </div>
 
   <!-- Navbar -->
@@ -74,6 +74,13 @@
     <nav class="mt-2">
       <?php $uri = service('uri'); ?>
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview">
+        <li class="nav-item">
+            <a href="<?= site_url('dashboard') ?>" 
+            class="nav-link <?= $uri->getSegment(1) == 'dashboard' ? 'active' : '' ?>">
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <p>Dashboard</p>
+            </a>
+        </li>
         <li class="nav-item">
             <a href="<?= site_url('invited-guests') ?>" 
             class="nav-link <?= $uri->getSegment(1) == 'invited-guests' && $uri->getSegment(2) == '' ? 'active' : '' ?>">

@@ -27,6 +27,10 @@ $routes->group('invited-guests', ['filter' => 'tokenSession'], function($routes)
     $routes->post('delete/(:num)', 'InvitedGuests::delete/$1');
 });
 // -------------------------
+// Dashboard routes
+// -------------------------
+$routes->get('dashboard', 'Dashboard::index', ['filter' => 'tokenSession']);
+// -------------------------
 // Modules (jika ada folder modules/…)
 // -------------------------
 $modules_path = ROOTPATH . 'modules/';

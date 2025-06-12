@@ -19,7 +19,7 @@ class AccessToken extends BaseController
 
         if ($inputToken === $validToken) {
             session()->set('access_granted', true);
-            return redirect()->to('/invited-guests');
+            return redirect()->to('/dashboard');
         }
 
         return redirect()->back()->with('error', 'Token salah');
@@ -28,6 +28,6 @@ class AccessToken extends BaseController
     public function logout()
     {
         session()->remove('access_granted');
-        return redirect()->to('/invited-guests')->with('success', 'Anda telah keluar');
+        return redirect()->to('/dashboard')->with('success', 'Anda telah keluar');
     }
 }
