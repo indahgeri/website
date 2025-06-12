@@ -466,3 +466,86 @@ section {
         background-attachment: scroll; /* atau hapus "fixed" */
     }
 }
+
+/* Fade-in and invitation open animation for sections */
+.section-hidden {
+    display: none !important;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+.section-fade-in {
+    display: block !important;
+    opacity: 1 !important;
+    pointer-events: auto;
+    animation: fadeInSection 0.8s cubic-bezier(0.4,0,0.2,1);
+}
+@keyframes fadeInSection {
+    0% { 
+        opacity: 0; 
+        transform: translateY(40px) scale(0.98);
+        filter: blur(8px);
+    }
+    50% {
+        filter: blur(4px);
+    }
+    100% { 
+        opacity: 1; 
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+/* Invitation open animation (envelope to content) */
+.invitation-open {
+    animation: invitationOpenAnim 1.5s cubic-bezier(0.6, 0.2, 0.1, 1) forwards;
+    z-index: 1002;
+    position: relative;
+    transform-origin: center;
+    will-change: transform, opacity;
+}
+@keyframes invitationOpenAnim {
+    0% { opacity: 1; transform: scale(1) rotateY(0deg); }
+    40% { opacity: 1; transform: scale(1.08) rotateY(-12deg); }
+    70% { opacity: 0.9; transform: scale(1.02) rotateY(45deg); }
+    90% { opacity: 0.5; transform: scale(0.98) rotateY(90deg); }
+    100% { opacity: 0; transform: scale(0.95) rotateY(90deg); pointer-events: none; }
+}
+
+@media (max-width: 768px) {
+    .section-fade-in {
+        animation: fadeInSectionMobile 0.9s cubic-bezier(0.4,0,0.2,1);
+        will-change: transform, opacity;
+    }
+    @keyframes fadeInSectionMobile {
+        from { 
+            opacity: 0; 
+            transform: translateY(20px) scale(0.98);
+        }
+        to { 
+            opacity: 1; 
+            transform: translateY(0) scale(1);
+        }
+    }
+    .invitation-open {
+        animation: invitationOpenAnimMobile 1.3s cubic-bezier(0.6, 0.2, 0.1, 1) forwards;
+        will-change: transform, opacity;
+    }
+    @keyframes invitationOpenAnimMobile {
+        0% { opacity: 1; transform: scale(1) rotateY(0deg); }
+        40% { opacity: 1; transform: scale(1.05) rotateY(-10deg); }
+        70% { opacity: 0.9; transform: scale(1.02) rotateY(30deg); }
+        90% { opacity: 0.5; transform: scale(0.98) rotateY(60deg); }
+        100% { opacity: 0; transform: scale(0.97) rotateY(90deg); pointer-events: none; }
+    }
+    
+    /* Optimize performance */
+    .save-the-date-bg {
+        background-attachment: scroll !important;
+    }
+    
+    /* Smoother transitions */
+    .section-hidden {
+        transition: opacity 0.8s ease-out;
+    }
+}

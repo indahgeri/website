@@ -29,7 +29,12 @@
     background: linear-gradient(145deg, rgba(26, 26, 26, 0.4), rgba(26, 26, 26, 0.6));
     border-radius: 0.25rem;
     border: 1px solid rgba(212, 196, 165, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                background-color 0.3s ease;
+    will-change: transform, box-shadow;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .countdown-box:hover {

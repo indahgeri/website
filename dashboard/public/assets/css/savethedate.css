@@ -1,6 +1,46 @@
 /* Save The Date Section Styles */
 #save-the-date {
     overflow: hidden;
+    opacity: 0;
+    transition: opacity 1.2s ease-out;
+    will-change: opacity;
+    transform: translateZ(0);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Animasi untuk title */
+.save-date-title {
+    animation: fadeInDown 1.5s ease-out forwards;
+    opacity: 0;
+}
+
+/* Animasi untuk countdown */
+.save-date-counter {
+    animation: fadeInUp 1.5s ease-out forwards;
+    opacity: 0;
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 #save-the-date .save-the-date-bg {
@@ -12,6 +52,8 @@
     background-repeat: no-repeat;
     height: 100%;
     width: 100%;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 #save-the-date .container {

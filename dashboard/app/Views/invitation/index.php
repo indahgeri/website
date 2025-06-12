@@ -63,33 +63,33 @@
 
     <!-- Section: Save The Date -->
     <section id="save-the-date" class="position-relative min-vh-100">
-        <div class="save-the-date-bg animate-zoom"></div>
+        <div class="save-the-date-bg animate-zoom" data-aos="zoom-in" data-aos-duration="1200"></div>
         
         <!-- Corner Title -->
-        <div class="position-absolute start-0 top-0 p-4" style="z-index: 2;">
-            <p class="text-uppercase mb-1" style="font-size: 0.8rem; letter-spacing: 2px; opacity: 0.9;" data-aos="fade-down" data-aos-duration="1000">The Wedding Of</p>
-            <h2 class="display-4 serif gold mb-2" data-aos="fade-up" data-aos-duration="2000">Indah &<br> Geri</h2>
-            <p class="mb-4" data-aos="fade-up" data-aos-duration="2000">Kamis, 26 Juni 2025</p>
+        <div class="position-absolute start-0 top-0 p-4 save-date-title" style="z-index: 2;">
+            <p class="text-uppercase mb-1" style="font-size: 0.8rem; letter-spacing: 2px; opacity: 0.9;" data-aos="fade-down" data-aos-delay="100" data-aos-duration="1000">The Wedding Of</p>
+            <h2 class="display-4 serif gold mb-2" data-aos="zoom-in-up" data-aos-delay="200" data-aos-duration="1200">Indah &<br> Geri</h2>
+            <p class="mb-4" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">Kamis, 26 Juni 2025</p>
         </div>
 
         <!-- Countdown Timer -->
-        <div class="position-absolute bottom-0 start-0 w-100 text-center pb-5" style="z-index: 2;">
-            <p class="save-date-text mb-4" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">Save the Date</p>
+        <div class="position-absolute bottom-0 start-0 w-100 text-center pb-5 save-date-counter" style="z-index: 2;">
+            <p class="save-date-text mb-4" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">Save the Date</p>
             
-            <div class="countdown-container mx-auto" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
-                <div class="countdown-box">
+            <div class="countdown-container mx-auto">
+                <div class="countdown-box" data-aos="zoom-in" data-aos-delay="500" data-aos-duration="900">
                     <div class="countdown-number" id="days">00</div>
                     <div class="countdown-label">Hari</div>
                 </div>
-                <div class="countdown-box">
+                <div class="countdown-box" data-aos="zoom-in" data-aos-delay="600" data-aos-duration="900">
                     <div class="countdown-number" id="hours">00</div>
                     <div class="countdown-label">Jam</div>
                 </div>
-                <div class="countdown-box">
+                <div class="countdown-box" data-aos="zoom-in" data-aos-delay="700" data-aos-duration="900">
                     <div class="countdown-number" id="minutes">00</div>
                     <div class="countdown-label">Menit</div>
                 </div>
-                <div class="countdown-box">
+                <div class="countdown-box" data-aos="zoom-in" data-aos-delay="800" data-aos-duration="900">
                     <div class="countdown-number" id="seconds">00</div>
                     <div class="countdown-label">Detik</div>
                 </div>
@@ -675,7 +675,14 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Initialize AOS -->
     <script>
-        AOS.init();
+        AOS.init({
+            startEvent: 'load',
+            once: false,
+            offset: 50,
+            duration: 1000,
+            easing: 'ease-in-out',
+            mirror: true
+        });
     </script>
     <script src="<?= base_url('assets/js/apps.js?v='.filemtime(FCPATH.'assets/js/apps.js')); ?>"></script>
     <script src="<?= base_url('assets/js/countdown.js?v='.filemtime(FCPATH.'assets/js/countdown.js')); ?>"></script>

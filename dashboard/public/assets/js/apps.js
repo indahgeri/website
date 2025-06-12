@@ -186,11 +186,17 @@ document.addEventListener('DOMContentLoaded', function() {
             // Muncul setelah scroll 60% dari tinggi konten
             const scrollThreshold = documentHeight * 0.4;
 
-            // Tampilkan/sembunyikan tombol back-to-top berdasarkan scroll position
-            if (scrollPosition > scrollThreshold) {
+            // Cek jika cover sudah tidak tampil (sudah section-hidden)
+            const coverSection = document.getElementById('cover');
+            const coverHidden = coverSection && coverSection.classList.contains('section-hidden');
+
+            // Tampilkan/sembunyikan tombol back-to-top berdasarkan scroll position dan cover
+            if (coverHidden && scrollPosition > scrollThreshold) {
                 backToTopButton.classList.add('show');
+                backToTopButton.style.display = 'flex';
             } else {
                 backToTopButton.classList.remove('show');
+                backToTopButton.style.display = 'none';
             }
 
             // Tampilkan auto scroll control setelah undangan dibuka
@@ -210,6 +216,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 backToTopButton.style.bottom = 'max(20px, env(safe-area-inset-bottom))';
             }
         });
+    }, { passive: true });
+
+    // Refresh AOS on scroll
+    let aosRefreshTimeout;
+    window.addEventListener('scroll', function() {
+        if (aosRefreshTimeout) {
+            clearTimeout(aosRefreshTimeout);
+        }
+        aosRefreshTimeout = setTimeout(function() {
+            AOS.refresh();
+        }, 60);
     }, { passive: true });
 
     // Handle page visibility change
@@ -234,39 +251,115 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }, { passive: true });
 
-    // Inisialisasi tampilan tombol
-    const initialScroll = window.pageYOffset || document.documentElement.scrollTop;
-    if (initialScroll > window.innerHeight * 0.3) {
-        backToTopButton.classList.add('show');
-        autoScrollControl.classList.add('show');
+    // --- Hide all sections except cover and footer on load ---
+    const coverSection = document.getElementById('cover');
+    const bukaUndanganBtn = document.getElementById('bukaUndangan');
+    const footer = document.querySelector('footer');
+    const allSections = Array.from(document.querySelectorAll('section'));
+    const sectionsToHide = allSections.filter(sec => sec !== coverSection);
+    // Reset cover section & tombol buka undangan ke kondisi awal
+    if (coverSection) {
+        coverSection.classList.remove('section-hidden', 'invitation-open');
+        coverSection.style.opacity = '';
+        coverSection.style.display = '';
     }
+    if (bukaUndanganBtn) {
+        bukaUndanganBtn.style.display = 'inline-block'; // atau 'flex' sesuai kebutuhan CSS
+        bukaUndanganBtn.disabled = false;
+    }
+    // Hanya tambahkan section-hidden, JANGAN tambahkan ke #save-the-date
+    sectionsToHide.forEach(sec => {
+        if (sec.id !== 'save-the-date') sec.classList.add('section-hidden');
+    });
+    if (footer) footer.classList.add('section-hidden');
 
-    // Event untuk membuka undangan
+    // --- Invitation open logic ---
     document.getElementById('bukaUndangan').addEventListener('click', function(e) {
         e.preventDefault();
-        document.getElementById('save-the-date').scrollIntoView({ behavior: 'smooth' });
         musicButton.style.display = 'flex';
-        
-        // Play music saat undangan dibuka
         bgMusic.play().then(() => {
             isMusicPlaying = true;
             musicButton.classList.add('playing');
         }).catch(err => {
             console.log("Autoplay gagal:", err);
         });
-        
-        // Tampilkan tombol auto scroll
         autoScrollControl.classList.add('show');
-        
-        // Mulai auto scroll setelah 3 detik
+        autoScrollControl.style.display = 'flex';
+        // Pastikan tombol back to top tetap disembunyikan
+        backToTopButton.classList.remove('show');
+        backToTopButton.style.display = 'none';
+
+        // --- Animate cover as invitation open, then hide it ---
+        coverSection.classList.add('invitation-open');
         setTimeout(() => {
-            if (!isAutoScrolling) {
-                toggleAutoScroll();
+            coverSection.classList.add('section-hidden');
+            coverSection.classList.remove('invitation-open');
+            // Tampilkan section lain dan footer dengan fade-in
+            sectionsToHide.forEach((sec, idx) => {
+                if (sec.id !== 'save-the-date') {
+                    setTimeout(() => {
+                        sec.classList.remove('section-hidden');
+                        sec.classList.add('section-fade-in');
+                        setTimeout(() => sec.classList.remove('section-fade-in'), 900);
+                    }, idx * 80);
+                }
+            });
+            if (footer) {
+                setTimeout(() => {
+                    footer.classList.remove('section-hidden');
+                    footer.classList.add('section-fade-in');
+                    setTimeout(() => footer.classList.remove('section-fade-in'), 900);
+                }, sectionsToHide.length * 80 + 200);
             }
-        }, 3000);
+            // Scroll ke save-the-date setelah animasi
+            setTimeout(() => {
+                const saveTheDateSection = document.getElementById('save-the-date');
+                // Remove hidden class and prepare animation
+                saveTheDateSection.classList.remove('section-hidden');
+                saveTheDateSection.style.opacity = '0';
+                saveTheDateSection.style.display = 'block';
+                
+                // Ensure smooth transition
+                setTimeout(() => {
+                    saveTheDateSection.style.transition = 'opacity 1.5s ease';
+                    saveTheDateSection.style.opacity = '1';
+                    saveTheDateSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    
+                    // Refresh AOS for remaining sections
+                    AOS.refresh();
+                    
+                    // Wait for content to be fully visible before starting auto-scroll
+                    const saveTheDateAnimDuration = 2800;
+                    setTimeout(() => {
+                        // DULU: if (!isAutoScrolling) { toggleAutoScroll(); }
+                        // Sekarang: Tidak otomatis menjalankan auto scroll
+                        // Hanya refresh AOS saja
+                        AOS.refresh();
+                    }, saveTheDateAnimDuration);
+                }, 100);
+            }, 800); // Increased delay for smoother transition
+        }, 1100);
     });
 });
 
+// Scroll ke atas saat halaman dimuat
+window.scrollTo(0, 0);
+// Sembunyikan tombol auto scroll & back to top pada load awal
+document.addEventListener('DOMContentLoaded', function() {
+    const autoScrollControl = document.getElementById('autoScrollControl');
+    const backToTopButton = document.getElementById('backToTop');
+
+    if (autoScrollControl) {
+        autoScrollControl.classList.remove('show');
+        autoScrollControl.style.display = 'none';
+    }
+    if (backToTopButton) {
+        backToTopButton.classList.remove('show');
+        backToTopButton.style.display = 'none';
+    }
+});
+
+// Modal image handler
 document.addEventListener('DOMContentLoaded', function() {
     var imageModalEl = document.getElementById('imageModal');
     // Ketika modal akan dibuka…
@@ -280,3 +373,31 @@ document.addEventListener('DOMContentLoaded', function() {
       modalImg.src = imgSrc;
     });
 });
+
+// Handle touch events for better mobile interaction
+let touchStartY = 0;
+let touchEndY = 0;
+let isScrolling = false;
+
+document.addEventListener('touchstart', function(e) {
+    touchStartY = e.touches[0].clientY;
+}, { passive: true });
+
+document.addEventListener('touchmove', function(e) {
+    if (isScrolling) return;
+    
+    touchEndY = e.touches[0].clientY;
+    const deltaY = touchEndY - touchStartY;
+    
+    // Disable auto-scroll on significant manual scroll
+    if (Math.abs(deltaY) > 50) {
+        isAutoScrolling = false;
+        autoScrollControl.querySelector('i').classList.remove('bi-pause-circle');
+        autoScrollControl.querySelector('i').classList.add('bi-play-circle');
+    }
+}, { passive: true });
+
+document.addEventListener('touchend', function() {
+    touchStartY = 0;
+    touchEndY = 0;
+}, { passive: true });
