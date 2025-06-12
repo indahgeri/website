@@ -43,12 +43,12 @@
               <a href="<?= base_url("invited-guests/edit/{$g['id']}") ?>" class="btn btn-sm btn-warning">
                 <i class="fas fa-edit"></i>
               </a>
-              <form action="<?= base_url("invited-guests/delete/{$g['id']}") ?>" method="post" class="d-inline">
+              <form action="<?= base_url("invited-guests/delete/{$g['id']}") ?>" method="post" class="d-inline d-none" id="formDeleteGuest<?= $g['id'] ?>">
                 <?= csrf_field() ?>
-                <button class="btn btn-sm btn-danger" onclick="return confirm('Hapus tamu ini?')">
-                  <i class="fas fa-trash"></i>
-                </button>
               </form>
+              <button type="button" class="btn btn-sm btn-danger btn-delete-guest" data-toggle="modal" data-target="#modalDeleteGuest" data-id="<?= $g['id'] ?>" data-name="<?= esc($g['name']) ?>">
+                <i class="fas fa-trash"></i>
+              </button>
               <button type="button" class="btn btn-sm btn-success" onclick="copyUndangan('<?= esc($g['name']) ?>', '<?= esc($g['slug']) ?>')">
                 <i class="fas fa-copy"></i>
               </button>
@@ -60,6 +60,30 @@
           <?php endforeach ?>
         </tbody>
       </table>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Delete Guest -->
+<div class="modal fade" id="modalDeleteGuest" tabindex="-1" aria-labelledby="modalDeleteGuestLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="deleteGuestForm" method="post">
+        <?= csrf_field() ?>
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalDeleteGuestLabel">Konfirmasi Hapus</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Apakah Anda yakin ingin menghapus tamu <b id="deleteGuestName"></b>?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+          <button type="submit" class="btn btn-danger">Hapus</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
@@ -112,6 +136,16 @@
       columnDefs: [
         { orderable: false, targets: -1 }
       ]
+    });
+
+    // Modal delete guest
+    $('#modalDeleteGuest').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget);
+      var id = button.data('id');
+      var name = button.data('name');
+      var form = $('#deleteGuestForm');
+      form.attr('action', '<?= base_url('invited-guests/delete/') ?>' + id);
+      $('#deleteGuestName').text(name);
     });
   });
 
