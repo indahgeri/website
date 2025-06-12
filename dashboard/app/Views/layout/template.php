@@ -95,6 +95,13 @@
             <p>Tambah Tamu</p>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="<?= site_url('rsvp') ?>" 
+            class="nav-link <?= $uri->getSegment(1) == 'rsvp' ? 'active' : '' ?>">
+            <i class="nav-icon fas fa-clipboard-check"></i>
+            <p>Data RSVP</p>
+            </a>
+        </li>
         <?php if (session('access_granted')): ?>
             <li class="nav-item mt-3">
               <hr class="mb-2 mt-0" style="border-top: 1px solid #4f5962;">

@@ -30,6 +30,15 @@ $routes->group('invited-guests', ['filter' => 'tokenSession'], function($routes)
 // Dashboard routes
 // -------------------------
 $routes->get('dashboards', 'Dashboards::index', ['filter' => 'tokenSession']);
+
+// -------------------------
+// RSVP routes
+// -------------------------
+$routes->group('rsvp', ['filter' => 'tokenSession'], function($routes) {
+    $routes->get('/', 'Rsvp::index');
+    $routes->post('delete/(:num)', 'Rsvp::delete/$1');
+});
+
 // -------------------------
 // Modules (jika ada folder modules/…)
 // -------------------------
