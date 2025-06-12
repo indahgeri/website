@@ -36,9 +36,13 @@
             <td><?= esc($g['detail']) ?></td>
             <td class="text-center"><?= $g['is_sent'] ? '✔️' : '❌' ?></td>
             <td class="text-center"><?= $g['is_opened'] ? '✔️' : '❌' ?></td>
-            <td><?= esc($g['opened_at']) ?></td>
+            <td>
+              <?php if (!empty($g['opened_at'])): ?>
+              <?= date('d F Y H:i', strtotime(esc($g['opened_at']))) ?>
+              <?php endif ?>
+            </td>
             <td><?= esc($g['rsvp_status']) ?></td>
-            <td><?= date('d/m/Y H:i', strtotime($g['created_at'])) ?></td>
+            <td><?= date('d F Y H:i', strtotime(esc($g['created_at']))) ?></td>
             <td class="text-center">
               <a href="<?= base_url("invited-guests/edit/{$g['id']}") ?>" class="btn btn-sm btn-warning">
                 <i class="fas fa-edit"></i>
