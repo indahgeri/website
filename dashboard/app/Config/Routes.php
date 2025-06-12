@@ -29,7 +29,7 @@ $routes->group('invited-guests', ['filter' => 'tokenSession'], function($routes)
 // -------------------------
 // Dashboard routes
 // -------------------------
-$routes->get('dashboard', 'Dashboard::index', ['filter' => 'tokenSession']);
+$routes->get('dashboards', 'Dashboards::index', ['filter' => 'tokenSession']);
 // -------------------------
 // Modules (jika ada folder modules/…)
 // -------------------------

@@ -75,10 +75,10 @@
       <?php $uri = service('uri'); ?>
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview">
         <li class="nav-item">
-            <a href="<?= site_url('dashboard') ?>" 
-            class="nav-link <?= $uri->getSegment(1) == 'dashboard' ? 'active' : '' ?>">
+            <a href="<?= site_url('dashboards') ?>" 
+            class="nav-link <?= $uri->getSegment(1) == 'dashboards' ? 'active' : '' ?>">
             <i class="nav-icon fas fa-tachometer-alt"></i>
-            <p>Dashboard</p>
+            <p>Dashboards</p>
             </a>
         </li>
         <li class="nav-item">

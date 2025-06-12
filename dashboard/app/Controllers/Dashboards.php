@@ -5,7 +5,7 @@ use App\Controllers\BaseController;
 use App\Models\InvitedGuestModel;
 use App\Models\RsvpModel;
 
-class Dashboard extends BaseController
+class Dashboards extends BaseController
 {
     public function index()
     {
@@ -38,6 +38,6 @@ class Dashboard extends BaseController
             'totalRSVPPending' => $totalRSVPPending,
             'totalRsvpMessages' => $totalRsvpMessages,
         ];
-        return view('dashboard/index', $data);
+        return view('dashboards/index', $data);
     }
 }
