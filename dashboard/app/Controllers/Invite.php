@@ -66,9 +66,36 @@ class Invite extends BaseController
 
         // natural sort ascending (case-insensitive)
         natcasesort($images);
+        
+        // buat array dengan key nama file tanpa ekstensi
+        $images_sorted = [];
+        foreach ($images as $image) {
+            $filename = pathinfo($image, PATHINFO_FILENAME);
+            $images_sorted[$filename] = $image;
+        }
+
+        // urutkan manual sesuai keinginan
+        $order = [
+            'bajuadat-gery', 'bajuadat-indahgery-00', 'bajuadat-indah',
+            'bajuadat-indahgery-01', 'bajuadat-indahgery-02', 'bajuadat-indahgery-03',
+            'kasual-01', 'kasual-02', 'kasual-08',
+            'kasual-04', 'kasual-03', 'kasual-05',
+            'kasual-07', 'kasual-06'
+        ];
+
+        $manual_sort_order = [];
+        $dirPath = rtrim(self::IMAGES_PATH, '/\\') . DIRECTORY_SEPARATOR;
+        foreach ($order as $key) {
+            if (isset($images_sorted[$key])) {
+                $filePath = $dirPath . $images_sorted[$key];
+                if (file_exists($filePath)) {
+                    $manual_sort_order[] = $images_sorted[$key];
+                }
+            }
+        }
 
         // reset numeric keys dan kembalikan sebagai array berurutan
-        return array_values($images);
+        return array_values($manual_sort_order);
     }
 
     public function submit()
