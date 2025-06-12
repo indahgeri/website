@@ -80,7 +80,7 @@ class Invite extends BaseController
             'bajuadat-indahgery-01', 'bajuadat-indahgery-02', 'bajuadat-indahgery-03',
             'kasual-01', 'kasual-02', 'kasual-08',
             'kasual-04', 'kasual-03', 'kasual-05',
-            'kasual-07', 'kasual-06'
+            'kasual-07', 'kasual-06', 'kasual-09',
         ];
 
         $manual_sort_order = [];
