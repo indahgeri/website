@@ -18,6 +18,7 @@
           <tr>
             <th>#</th>
             <th>Nama Tamu</th>
+            <th>Slug</th>
             <th>Kehadiran</th>
             <th>Jumlah Hadir</th>
             <th>Pesan</th>
@@ -30,6 +31,7 @@
           <tr>
             <td><?= $i+1 ?></td>
             <td><?= esc($rsvp['guest_name']) ?></td>
+            <td><?= esc($rsvp['guest_slug']) ?></td>
             <td><?= esc($rsvp['attendance']) ?></td>
             <td><?= esc($rsvp['total_attendees']) ?></td>
             <td><?= esc($rsvp['message']) ?></td>
