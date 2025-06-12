@@ -4,7 +4,8 @@
   --brand-gold-dark: #b99d60;
   --brand-cream: #fff8f0;
   --brand-white: #ffffff;
-  --brand-overlay: rgba(26, 35, 45, .65); /* biru-abu gelap transparan */
+  --brand-overlay: rgba(26, 35, 45, 0.65); /* biru-abu gelap transparan */
+  --brand-dark: rgba(0, 0, 0, 0.55); /* biru-abu gelap transparan */
   /* fonts (fall-back) */
   --font-base: 'Montserrat', 'Segoe UI', sans-serif;
   --font-serif: 'Great Vibes', cursive;
@@ -35,7 +36,8 @@
 
 /* CARDS ----------------------------------------------------*/
 .event-card {
-  background: color-mix(in srgb, var(--brand-overlay) 30%, var(--brand-overlay)); /* semi-trans */
+  /* background: color-mix(in srgb, var(--brand-overlay) 30%, var(--brand-overlay)); semi-trans */
+  background: color-mix(in srgb, var(--brand-dark) 30%, var(--brand-dark)); /* semi-trans */
   border: 1px solid color-mix(in srgb, var(--brand-gold) 25%, transparent);
   border-radius:1.25rem;
   color:var(--brand-white);
