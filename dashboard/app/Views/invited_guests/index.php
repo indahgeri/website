@@ -17,10 +17,10 @@
           <tr>
             <th>#</th>
             <th>Nama</th>
-            <th>No. HP</th>
-            <th>Detail</th>
             <th>Terkirim</th>
             <th>Dibuka</th>
+            <th>No. HP</th>
+            <th>Detail</th>
             <th>Waktu Dibuka</th>
             <th>RSVP</th>
             <th>Waktu</th>
@@ -32,10 +32,10 @@
           <tr>
             <td><?= $i+1 ?></td>
             <td><?= esc($g['name']) ?></td>
-            <td><?= esc($g['phone']) ?></td>
-            <td><?= esc($g['detail']) ?></td>
             <td class="text-center"><?= $g['is_sent'] ? '✔️' : '❌' ?></td>
             <td class="text-center"><?= $g['is_opened'] ? '✔️' : '❌' ?></td>
+            <td><?= esc($g['phone']) ?></td>
+            <td><?= esc($g['detail']) ?></td>
             <td>
               <?php if (!empty($g['opened_at'])): ?>
               <?= date('d F Y H:i', strtotime(esc($g['opened_at']))) ?>
