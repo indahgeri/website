@@ -22,6 +22,12 @@
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
+    <!-- Judul dan deskripsi juga bisa diatur -->
+    <meta property="og:title" content="Undangan Pernikahan Indah & Gery" />
+    <meta property="og:description" content="Merupakan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu." />
+    <meta property="og:url" content="<?= current_url() ?>" />
+    <meta property="og:type" content="website" />
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
