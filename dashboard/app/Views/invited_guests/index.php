@@ -56,15 +56,15 @@
               <button type="button" class="btn btn-sm btn-success" onclick="copyUndangan('<?= esc($g['name']) ?>', '<?= esc($g['slug']) ?>')">
                 <i class="fas fa-copy"></i>
               </button>
-              <!-- <a href="https://wa.me/?text=<?= rawurlencode("Kepada Yth.\nBapak/Ibu/Saudara/i\n{$g['name']}\n__________\n\nAssalamualaikum Wr. Wb.\n\nBismillahirahmanirrahim.\nTanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara pernikahan kami:\n\nIndah Permata Sari S.Ikom\n   &\nGery Anuggrah S.SOS\n\nBerikut link untuk info lengkap dari acara kami:\n" . base_url('invite/' . $g['slug']) . "\n\nMerupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.\n\nJangan lupa isi Guestbook ya..\n\nWassalamualaikum Wr. Wb.\n\nTerima Kasih..\n\nHormat kami,\nIndah & Gery") ?>" target="_blank" class="btn btn-sm btn-info">
+              <a href="https://wa.me/?text=<?= rawurlencode("Kepada Yth.\nBapak/Ibu/Saudara/i\n{$g['name']}\n__________\n\nAssalamualaikum Wr. Wb.\n\nBismillahirahmanirrahim.\nTanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara pernikahan kami:\n\nIndah Permata Sari S.Ikom\n   &\nGery Anuggrah S.SOS\n\nBerikut link untuk info lengkap dari acara kami:\n" . base_url('invite/' . $g['slug']) . "\n\nMerupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.\n\nJangan lupa isi Guestbook ya..\n\nWassalamualaikum Wr. Wb.\n\nTerima Kasih..\n\nHormat kami,\nIndah & Gery") ?>" target="_blank" class="btn btn-sm btn-info">
                 <i class="fab fa-whatsapp"></i>
-              </a> -->
+              </a>
 
-              <a href="https://wa.me/?text=<?= rawurlencode(
+              <!-- <a href="https://wa.me/?text=<?= rawurlencode(
                   "Kepada Yth.\nBapak/Ibu/Saudara/i\n{$g['name']}\n__________\n\nAssalamualaikum Wr. Wb.\n\nBismillahirahmanirrahim.\nTanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara pernikahan kami:\n\nIndah Permata Sari S.Ikom\n   &\nGery Anuggrah S.SOS\n\nMerupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu.\n\nJangan lupa isi Guestbook ya..\n\nWassalamualaikum Wr. Wb.\n\nTerima Kasih..\n\nHormat kami,\nIndah & Gery\n\n" . base_url('invite/' . $g['slug'])
               ) ?>" target="_blank" class="btn btn-sm btn-info">
                   <i class="fab fa-whatsapp"></i>
-              </a>
+              </a> -->
             </td>
           </tr>
           <?php endforeach ?>
