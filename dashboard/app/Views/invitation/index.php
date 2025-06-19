@@ -18,7 +18,7 @@
 
     <!-- Gambar utama yang ingin kamu tampilkan (ukuran ideal: 1200x630 px) -->
     <meta property="og:image" content="<?= base_url('/assets/images/bg/prewedding-indah-geri-10.jpg') ?>" />
-    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
