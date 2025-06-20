@@ -43,3 +43,39 @@
 @media (max-width:575.98px){
   .glass-card { padding:1.75rem 1.25rem; }
 }
+
+/* RSVP Attendance Button Group Responsive */
+#rsvp .btn-group .btn {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  min-height: 2.5rem;
+  font-size: 1rem;
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Label icon dan teks vertikal, lebih rapat */
+#rsvp .btn-group .btn i {
+  font-size: 1.2em;
+  margin-bottom: 0.1em;
+  display: block;
+}
+#rsvp .btn-group .btn {
+  gap: 0.1em;
+}
+
+/* Untuk layar kecil, font dan padding lebih kecil */
+@media (max-width: 575.98px) {
+  #rsvp .btn-group .btn {
+    font-size: 0.95rem;
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+    min-height: 2rem;
+  }
+  #rsvp .btn-group {
+    flex-direction: row;
+  }
+}

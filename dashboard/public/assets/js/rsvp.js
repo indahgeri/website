@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   yesRadio.addEventListener('change', toggleGuestCount);
   document.getElementById('attendNo').addEventListener('change', toggleGuestCount);
+  document.getElementById('attendMaybe').addEventListener('change', toggleGuestCount);
 
   // RSVP AJAX submit & auto append wish
   const rsvpForm = document.getElementById('rsvpForm');

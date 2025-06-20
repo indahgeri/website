@@ -561,17 +561,23 @@
                 <fieldset class="mb-3">
                     <legend class="form-label mb-2">Konfirmasi kehadiran, ya 😊</legend>
                     <div class="btn-group w-100" role="group" aria-label="Attendance">
-                    <input type="radio" class="btn-check" name="attend" id="attendYes"
+                        <input type="radio" class="btn-check" name="attend" id="attendYes"
                             value="yes" required>
-                    <label class="btn btn-outline-light flex-fill" for="attendYes">
-                        <i class="bi bi-check-circle me-1"></i> Hadir
-                    </label>
+                        <label class="btn btn-outline-light flex-fill" for="attendYes">
+                            <i class="bi bi-check-circle me-1"></i> Hadir
+                        </label>
 
-                    <input type="radio" class="btn-check" name="attend" id="attendNo"
+                        <input type="radio" class="btn-check" name="attend" id="attendNo"
                             value="no" required>
-                    <label class="btn btn-outline-light flex-fill" for="attendNo">
-                        <i class="bi bi-x-circle me-1"></i> Tidak hadir
-                    </label>
+                        <label class="btn btn-outline-light flex-fill" for="attendNo">
+                            <i class="bi bi-x-circle me-1"></i> Tidak hadir
+                        </label>
+
+                        <input type="radio" class="btn-check" name="attend" id="attendMaybe"
+                            value="maybe" required>
+                        <label class="btn btn-outline-light flex-fill" for="attendMaybe">
+                            <i class="bi bi-question-circle me-1"></i> Mungkin
+                        </label>
                     </div>
                     <div class="invalid-feedback d-block">Mohon pilih salah satu.</div>
                 </fieldset>
